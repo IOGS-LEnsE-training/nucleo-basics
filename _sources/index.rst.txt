@@ -19,33 +19,32 @@ GUI Tutorials
 
 .. toctree::
    :maxdepth: 1
+   :caption: First project
 
 	Microcontrollers<contents/general>
 	Nucleo boards<contents/nucleo>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Inputs and outputs
+   :caption: Interactions
    
-	Digital inputs and Output<contents/io_digital>
-	Analog inputs<contents/io_analog_in>
-	PWM outputs<contents/io_pwm_out>
-	Analog outputs<contents/io_analog_out>
-
-
+    Inputs and Outputs<contents/io.rst>
+	Events and Interrupts<contents/events.rst>
+	
 .. toctree::
    :maxdepth: 1
-   :caption: Events and interrupts
-   
-	Periodic events (astable)<contents/events_astable>
-	Monostable events<contents/events_monostable>
-	External events (interrupts)<contents/events_interrupts>
+   :caption: External components
+
+	LEDs control<contents/leds.rst>
+	Motors control<contents/motors.rst>
    
 .. toctree::
    :maxdepth: 1
-   :caption: Advanced and Expert
+   :caption: Next trainings
    
-   Next trainings<contents/next_traingings>
+   Communication<https://LINK>
+   Advanced<https://LINK>
+   Expert<https://LINK>
 
 About the LEnsE
 ***************

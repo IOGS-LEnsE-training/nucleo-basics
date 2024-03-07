@@ -19,13 +19,9 @@ GUI Tutorials
 
 .. toctree::
    :maxdepth: 1
-   :caption: General
-   
-	Microcontroller vs Processor<contents/gen_microcontroller>
-	Polling vs Interrupts<contents/gen_polling_interrupts_rtos>
-	MBED Compiler and Keil IDE<contents/gen_mbed_keil>
-	Main program structure<contents/gen_main_structure>
-	Debugging<contents/gen_debugging>
+
+	Microcontrollers<contents/general>
+	Nucleo boards<contents/nucleo>
 
 .. toctree::
    :maxdepth: 1
@@ -40,16 +36,16 @@ GUI Tutorials
 .. toctree::
    :maxdepth: 1
    :caption: Events and interrupts
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Time management
    
+	Periodic events (astable)<contents/events_astable>
+	Monostable events<contents/events_monostable>
+	External events (interrupts)<contents/events_interrupts>
    
 .. toctree::
    :maxdepth: 1
-   :caption: External ressources
+   :caption: Advanced and Expert
+   
+   Next trainings<contents/next_traingings>
 
 About the LEnsE
 ***************

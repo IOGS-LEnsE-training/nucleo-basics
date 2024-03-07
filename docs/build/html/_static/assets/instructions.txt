@@ -1,0 +1,19 @@
+// Logo Tech
+Font for LEnsE : interstate
+Font for tech : Terminator Two weight
+
+// Logo Platform
+Font for platform : Audiowide
+Background color :  #0b2b52 / 11, 43, 82
+
+// Logo Ressources
+Font for ressources : Audiowide
+Background color :  #d9804e / 217, 128, 78
+
+// Logo Training / Tutorials
+Font for training : Audiowide
+Background color :  #34a2bd / 52, 162, 189
+
+// Logo Procedures
+Font for procedures : Audiowide
+Background color :  #2fa760 / 47, 167, 96

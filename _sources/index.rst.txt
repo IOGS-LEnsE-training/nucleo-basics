@@ -22,11 +22,19 @@ GUI Tutorials
    :caption: General
    
 	Microcontroller vs Processor<contents/gen_microcontroller>
-	Polling vs Interrupts vs real-time OS<contents/gen_polling_interrupts_rtos>
+	Polling vs Interrupts<contents/gen_polling_interrupts_rtos>
+	MBED Compiler and Keil IDE<contents/gen_mbed_keil>
+	Main program structure<contents/gen_main_structure>
+	Debugging<contents/gen_debugging>
 
 .. toctree::
    :maxdepth: 1
    :caption: Inputs and outputs
+   
+	Digital inputs and Output<contents/io_digital>
+	Analog inputs<contents/io_analog_in>
+	PWM outputs<contents/io_pwm_out>
+	Analog outputs<contents/io_analog_out>
 
 
 .. toctree::

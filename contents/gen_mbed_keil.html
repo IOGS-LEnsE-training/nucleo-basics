@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Microcontroller vs Processor &mdash; Nucleo Basics 0.1 documentation</title>
+  <title>MBED Compiler and Keil Studio IDE &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=4e592dfd" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Polling vs Interrupts vs real-time OS" href="gen_polling_interrupts_rtos.html" />
-    <link rel="prev" title="Nucleo boards - Basics" href="../index.html" /> 
+    <link rel="next" title="Main program structure" href="gen_main_structure.html" />
+    <link rel="prev" title="Polling vs Interrupts vs real-time OS" href="gen_polling_interrupts_rtos.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,15 +49,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">General</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Microcontroller vs Processor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#title-1">Title 1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#title-1-1">Title 1.1</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="gen_microcontroller.html">     Microcontroller vs Processor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gen_polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gen_mbed_keil.html">     MBED Compiler and Keil IDE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     MBED Compiler and Keil IDE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compiler-and-programming-langages-of-microcontrollers">Compiler and Programming langages of microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mbed-compiler">MBED Compiler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compiler-for-arm-core">Compiler for ARM core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-language">C++ language</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#keil-studio-ide">Keil Studio IDE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#online-version">Online Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#offline-version">Offline Version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#first-project">First project</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="gen_main_structure.html">     Main program structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gen_debugging.html">     Debugging</a></li>
 </ul>
@@ -83,9 +91,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Microcontroller vs Processor</li>
+      <li class="breadcrumb-item active">MBED Compiler and Keil Studio IDE</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/contents/gen_microcontroller.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/contents/gen_mbed_keil.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -93,14 +101,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="microcontroller-vs-processor">
-<h1>Microcontroller vs Processor<a class="headerlink" href="#microcontroller-vs-processor" title="Link to this heading"></a></h1>
-<section id="title-1">
-<h2>Title 1<a class="headerlink" href="#title-1" title="Link to this heading"></a></h2>
-<section id="title-1-1">
-<h3>Title 1.1<a class="headerlink" href="#title-1-1" title="Link to this heading"></a></h3>
-<p>Bla bla <a class="reference external" href="https://www.baslerweb.com/en/">Basler website</a>.</p>
+  <section id="mbed-compiler-and-keil-studio-ide">
+<h1>MBED Compiler and Keil Studio IDE<a class="headerlink" href="#mbed-compiler-and-keil-studio-ide" title="Link to this heading"></a></h1>
+<section id="compiler-and-programming-langages-of-microcontrollers">
+<h2>Compiler and Programming langages of microcontrollers<a class="headerlink" href="#compiler-and-programming-langages-of-microcontrollers" title="Link to this heading"></a></h2>
 </section>
+<section id="mbed-compiler">
+<h2>MBED Compiler<a class="headerlink" href="#mbed-compiler" title="Link to this heading"></a></h2>
+<section id="compiler-for-arm-core">
+<h3>Compiler for ARM core<a class="headerlink" href="#compiler-for-arm-core" title="Link to this heading"></a></h3>
+</section>
+<section id="c-language">
+<h3>C++ language<a class="headerlink" href="#c-language" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="keil-studio-ide">
+<h2>Keil Studio IDE<a class="headerlink" href="#keil-studio-ide" title="Link to this heading"></a></h2>
+<section id="online-version">
+<h3>Online Version<a class="headerlink" href="#online-version" title="Link to this heading"></a></h3>
+</section>
+<section id="offline-version">
+<h3>Offline Version<a class="headerlink" href="#offline-version" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="first-project">
+<h2>First project<a class="headerlink" href="#first-project" title="Link to this heading"></a></h2>
 </section>
 </section>
 
@@ -108,8 +133,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="Nucleo boards - Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gen_polling_interrupts_rtos.html" class="btn btn-neutral float-right" title="Polling vs Interrupts vs real-time OS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gen_polling_interrupts_rtos.html" class="btn btn-neutral float-left" title="Polling vs Interrupts vs real-time OS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gen_main_structure.html" class="btn btn-neutral float-right" title="Main program structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

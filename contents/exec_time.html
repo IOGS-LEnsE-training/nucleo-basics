@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polling vs Interrupts vs real-time OS &mdash; Nucleo Basics 0.1 documentation</title>
+  <title>Execution time &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=5fb7c9f9" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nucleo boards from STMicroelectronics" href="nucleo.html" />
-    <link rel="prev" title="Microcontroller vs Processor" href="gen_microcontroller.html" /> 
+    <link rel="next" title="LEDs control" href="leds.html" />
+    <link rel="prev" title="External events (interrupts)" href="events_interrupts.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,25 +48,15 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">First project</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="general.html">     Microcontrollers</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gen_microcontroller.html">     Microcontroller vs Processor</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">     Polling vs Interrupts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#title-1">Title 1</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#title-1-1">Title 1.1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="general.html">     Microcontrollers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nucleo.html">     Nucleo boards</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactions</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="io.html"> Inputs and Outputs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">     Events and Interrupts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exec_time.html">     Execution time</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Execution time</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">External components</span></p>
 <ul>
@@ -92,10 +82,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="general.html">Microcontrollers</a></li>
-      <li class="breadcrumb-item active">Polling vs Interrupts vs real-time OS</li>
+      <li class="breadcrumb-item active">Execution time</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/contents/gen_polling_interrupts_rtos.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/contents/exec_time.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -103,23 +92,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="polling-vs-interrupts-vs-real-time-os">
-<h1>Polling vs Interrupts vs real-time OS<a class="headerlink" href="#polling-vs-interrupts-vs-real-time-os" title="Link to this heading"></a></h1>
-<section id="title-1">
-<h2>Title 1<a class="headerlink" href="#title-1" title="Link to this heading"></a></h2>
-<section id="title-1-1">
-<h3>Title 1.1<a class="headerlink" href="#title-1-1" title="Link to this heading"></a></h3>
-<p>Bla bla <a class="reference external" href="https://www.baslerweb.com/en/">Basler website</a>.</p>
-</section>
-</section>
+  <section id="execution-time">
+<h1>Execution time<a class="headerlink" href="#execution-time" title="Link to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gen_microcontroller.html" class="btn btn-neutral float-left" title="Microcontroller vs Processor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="nucleo.html" class="btn btn-neutral float-right" title="Nucleo boards from STMicroelectronics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="events_interrupts.html" class="btn btn-neutral float-left" title="External events (interrupts)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="leds.html" class="btn btn-neutral float-right" title="LEDs control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

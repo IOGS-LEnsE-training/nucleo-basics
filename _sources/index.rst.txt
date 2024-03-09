@@ -28,8 +28,9 @@ GUI Tutorials
    :maxdepth: 1
    :caption: Interactions
    
-    Inputs and Outputs<contents/io.rst>
-	Events and Interrupts<contents/events.rst>
+    Inputs and Outputs<contents/io>
+	Events and Interrupts<contents/events>
+	Execution time<contents/exec_time>
 	
 .. toctree::
    :maxdepth: 1
@@ -42,9 +43,7 @@ GUI Tutorials
    :maxdepth: 1
    :caption: Next trainings
    
-   Communication<https://LINK>
-   Advanced<https://LINK>
-   Expert<https://LINK>
+   Communication / Advanced<https://iogs-lense-training.github.io/nucleo-advanced/>
 
 About the LEnsE
 ***************

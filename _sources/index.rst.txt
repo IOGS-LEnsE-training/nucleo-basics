@@ -14,8 +14,8 @@ Nucleo boards - Basics
 The GitHub repository of this project : `Nucleo Basics <https://github.com/IOGS-LEnsE-training/nucleo-basics>`_
 
 
-GUI Tutorials
-*************
+Basic concepts categories
+*************************
 
 .. toctree::
    :maxdepth: 1

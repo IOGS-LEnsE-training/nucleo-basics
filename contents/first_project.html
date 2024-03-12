@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LEDs control &mdash; Nucleo Basics 0.1 documentation</title>
+  <title>First project &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=69701ec4" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Motors control" href="motors.html" />
-    <link rel="prev" title="Execution time" href="exec_time.html" /> 
+    <link rel="next" title="Inputs and Outputs" href="io.html" />
+    <link rel="prev" title="External ressources / libraries" href="gen_libs.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,10 +48,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Embedded systems</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="general.html">     Microcontrollers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nucleo.html">     Nucleo boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="first_project.html">     First project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     First project</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactions</span></p>
 <ul>
@@ -60,20 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="exec_time.html">     Execution time</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">External components</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     LEDs control</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#tor-control">TOR control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#light-intensity-control">Light intensity control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#connecting-leds">Connecting LEDs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#red-leds">Red LEDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simple-leds">Simple LEDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rgb-leds">RGB LEDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#power-leds">Power LEDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#smart-leds-ws2812-type">Smart LEDs (WS2812 type)</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">     LEDs control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="motors.html">     Motors control</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Next trainings</span></p>
@@ -95,9 +83,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">LEDs control</li>
+      <li class="breadcrumb-item active">First project</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/contents/leds.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/contents/first_project.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -105,40 +93,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="leds-control">
-<h1>LEDs control<a class="headerlink" href="#leds-control" title="Link to this heading"></a></h1>
-<section id="tor-control">
-<h2>TOR control<a class="headerlink" href="#tor-control" title="Link to this heading"></a></h2>
-</section>
-<section id="light-intensity-control">
-<h2>Light intensity control<a class="headerlink" href="#light-intensity-control" title="Link to this heading"></a></h2>
-</section>
-<section id="connecting-leds">
-<h2>Connecting LEDs<a class="headerlink" href="#connecting-leds" title="Link to this heading"></a></h2>
-<section id="red-leds">
-<h3>Red LEDs<a class="headerlink" href="#red-leds" title="Link to this heading"></a></h3>
-</section>
-<section id="simple-leds">
-<h3>Simple LEDs<a class="headerlink" href="#simple-leds" title="Link to this heading"></a></h3>
-</section>
-<section id="rgb-leds">
-<h3>RGB LEDs<a class="headerlink" href="#rgb-leds" title="Link to this heading"></a></h3>
-</section>
-<section id="power-leds">
-<h3>Power LEDs<a class="headerlink" href="#power-leds" title="Link to this heading"></a></h3>
-</section>
-<section id="smart-leds-ws2812-type">
-<h3>Smart LEDs (WS2812 type)<a class="headerlink" href="#smart-leds-ws2812-type" title="Link to this heading"></a></h3>
-</section>
-</section>
+  <section id="first-project">
+<h1>First project<a class="headerlink" href="#first-project" title="Link to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="exec_time.html" class="btn btn-neutral float-left" title="Execution time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="motors.html" class="btn btn-neutral float-right" title="Motors control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gen_libs.html" class="btn btn-neutral float-left" title="External ressources / libraries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="io.html" class="btn btn-neutral float-right" title="Inputs and Outputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

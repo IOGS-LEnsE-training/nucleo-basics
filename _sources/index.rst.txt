@@ -9,7 +9,7 @@ Nucleo boards - Basics
 .. caution::
    This application and its documentation website are still works in progress
 
-**Nucleo Basics** is a complete set of tutorials to learn the basics of **Nucleo board** programmation with the **MBED** compiler.
+**Nucleo Basics** is a complete set of tutorials to learn the basics of **Nucleo board** programmation with the **MBED** free open source IoT operating system.
 
 The GitHub repository of this project : `Nucleo Basics <https://github.com/IOGS-LEnsE-training/nucleo-basics>`_
 
@@ -19,10 +19,11 @@ Basic concepts categories
 
 .. toctree::
    :maxdepth: 1
-   :caption: First project
+   :caption: Embedded systems
 
 	Microcontrollers<contents/general>
 	Nucleo boards<contents/nucleo>
+	First project<contents/first_project>
 
 .. toctree::
    :maxdepth: 1

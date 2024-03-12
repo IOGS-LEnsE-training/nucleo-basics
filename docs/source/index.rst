@@ -22,6 +22,7 @@ Basic concepts categories
    :caption: Embedded systems
 
 	Microcontrollers<contents/general>
+	Polling vs Interrupts<contents/polling_interrupts_rtos>
 	Nucleo boards<contents/nucleo>
 	First project<contents/first_project>
 

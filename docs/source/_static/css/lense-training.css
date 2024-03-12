@@ -114,15 +114,14 @@ h4::before {
 	border-radius: 5px 10px 0px 0px;
 }
 
-
 /* URL Links */
-.document a{
+a.external{
 	background: var(--iogs-violet-light); 
 	padding: 2px 5px 2px 5px;
 	border-radius: 3px;
 	color: var(--ressources);
 }
-.document a:hover{
+a.external:hover{
 	background: var(--iogs-violet); 
 	color: white;
 }
@@ -136,4 +135,10 @@ code.file{
 }
 code.file span.pre{
 	color: var(--iogs-violet);
+}
+.image_reference a{
+	background: white;
+}
+.image_reference a:hover{
+	background: white;
 }

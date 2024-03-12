@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polling vs Interrupts vs real-time OS &mdash; Nucleo Basics 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nucleo boards from STMicroelectronics" href="nucleo.html" />
+    <link rel="prev" title="Embedded systems" href="general.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Nucleo Basics
+              <img src="../_static/logo-training_git.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Embedded systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">     Microcontrollers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Polling vs Interrupts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#computer-s-vs-embedded-system-s-main-program">Computer’s vs embedded system’s main program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#computer-with-a-microprocessor">Computer with a microprocessor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#embedded-system-with-a-microcontroller">Embedded system with a microcontroller</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#different-approachs-for-controlling">Different approachs for controlling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#continuous-polling">Continuous polling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operating-principle">Operating principle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#limits">Limits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interrupt-service-routines">Interrupt Service Routines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtos">RTOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nucleo.html">     Nucleo boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_project.html">     First project</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="io.html"> Inputs and Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">     Events and Interrupts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exec_time.html">     Execution time</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">External components</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">     LEDs control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">     Motors control</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Next trainings</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://iogs-lense-training.github.io/nucleo-advanced/">Communication / Advanced</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nucleo Basics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Polling vs Interrupts vs real-time OS</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/contents/polling_interrupts_rtos.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="polling-vs-interrupts-vs-real-time-os">
+<h1>Polling vs Interrupts vs real-time OS<a class="headerlink" href="#polling-vs-interrupts-vs-real-time-os" title="Link to this heading"></a></h1>
+<section id="computer-s-vs-embedded-system-s-main-program">
+<h2>Computer’s vs embedded system’s main program<a class="headerlink" href="#computer-s-vs-embedded-system-s-main-program" title="Link to this heading"></a></h2>
+<section id="computer-with-a-microprocessor">
+<h3>Computer with a microprocessor<a class="headerlink" href="#computer-with-a-microprocessor" title="Link to this heading"></a></h3>
+<p>The main structure of a <strong>computer program</strong> often follows a typical pattern known as the <strong>control flow</strong>. This control flow can be represented using various programming constructs, but a common structure consists of the following main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Input</strong>: This is where the program <strong>receives data</strong> or information from external sources, such as user input, files, or sensors.</p></li>
+<li><p><strong>Processing</strong>: This is the core of the program where <strong>data are manipulated</strong>, calculations are performed, and decisions are made based on the input.</p></li>
+<li><p><strong>Output</strong>: After processing the input data, the program <strong>produces output</strong>, which can be displayed to the user, saved to a file, or sent to other systems.</p></li>
+</ol>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/gen_main_structure.png"><img alt="../_images/gen_main_structure.png" src="../_images/gen_main_structure.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Generic block diagram of a computer program.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The main program can also include:</p>
+<ul class="simple">
+<li><p><strong>Control Structures</strong>: These structures govern the flow of execution within the program. They include conditional statements (if-else, switch-case) for making decisions based on certain conditions, loops (for, while) for repeating a block of code, and function calls for modularizing code and reusing it.</p></li>
+<li><p><strong>Error Handling</strong>: Programs often include mechanisms to detect and handle errors or exceptional conditions that may occur during execution, ensuring the program behaves correctly even in unexpected situations.</p></li>
+<li><p><strong>Data Structures</strong>: Data structures organize and store data efficiently within the program. Examples include arrays, lists, queues, stacks, and dictionaries, among others.</p></li>
+</ul>
+<p>Overall, the main structure of a computer program revolves around taking input, processing it, producing output, controlling the flow of execution, handling errors, and organizing data effectively. The specific implementation and organization of these components vary depending on the programming language and the problem being solved.</p>
+</section>
+<section id="embedded-system-with-a-microcontroller">
+<h3>Embedded system with a microcontroller<a class="headerlink" href="#embedded-system-with-a-microcontroller" title="Link to this heading"></a></h3>
+<p>The main structure of an <strong>embedded program</strong> often differs from traditional computer programs due to the specific requirements and constraints of embedded systems. While the exact structure can vary depending on the application and architecture, embedded programs typically follow a pattern that includes the following main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Initialization</strong>: This section initializes the <strong>hardware peripherals</strong>, sets up communication interfaces, configures timers, initializes variables, and prepares the system for operation.</p></li>
+<li><p><strong>Main Loop</strong>: The main loop is the <strong>heart of the embedded program</strong>. It typically contains the core functionality of the system, including reading sensor data, processing inputs, performing control algorithms, and updating outputs. The main loop executes continuously, handling tasks in real-time.</p></li>
+<li><p><strong>Interrupt Service Routines (ISRs)</strong>: Embedded systems often use interrupts to handle time-sensitive events or external stimuli. ISRs are short routines that execute in response to specific events, such as timer overflows, external interrupts, or communication events. They handle these events quickly and efficiently to ensure timely responses.</p></li>
+</ol>
+<p>The main structure of an embedded program revolves around initializing hardware, implementing the main functionality in a <strong>continuous loop</strong>, handling interrupts and events, but also interacting with hardware peripherals, managing power consumption, ensuring reliability, and communicating with external devices or systems.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/gen_microcont_prog_struct.png"><img alt="../_images/gen_microcont_prog_struct.png" src="../_images/gen_microcont_prog_struct.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Generic block diagram of an embedded program.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>An embedded system can also include:</p>
+<ul class="simple">
+<li><p><strong>Peripheral Drivers</strong>: to interact with various hardware peripherals, such as GPIO (General Purpose Input/Output) pins,  ADC (Analog-to-Digital Converter) modules, and PWM (Pulse-Width Modulation) controllers. Peripheral drivers provide an interface between the program and the hardware, allowing the program to read from and write to these peripherals.</p></li>
+<li><p><strong>Power Management</strong>: in battery-powered embedded systems or those with strict power constraints, power management is crucial. This includes managing sleep modes, reducing power consumption during idle periods, and handling power supply events.</p></li>
+<li><p><strong>Error Handling and Fault Tolerance</strong>: to operate in harsh environments or critical applications where reliability is paramount. Error handling mechanisms detect and respond to faults, errors, and exceptional conditions to ensure the system operates safely and reliably.</p></li>
+<li><p><strong>Communication Protocols</strong>: to communicate with other devices or systems using various protocols such as UART (Universal Asynchronous Receiver-Transmitter) modules, SPI (Serial Peripheral Interface) interfaces, I2C (Inter-Integrated Circuit) buses, CAN (Controller Area Network), Ethernet, USB, Bluetooth, or wireless protocols like Wi-Fi and Zigbee. Communication tasks involve transmitting and receiving data, parsing messages, and handling communication errors.</p></li>
+</ul>
+</section>
+</section>
+<section id="different-approachs-for-controlling">
+<h2>Different approachs for controlling<a class="headerlink" href="#different-approachs-for-controlling" title="Link to this heading"></a></h2>
+<p>Many embedded systems are responsible for <strong>controlling physical processes</strong> or devices, often in constrained environments with limited resources, power, or space. This could involve regulating temperature, adjusting motor speeds, managing power consumption, or controlling the movement of robotic arms.</p>
+<p>They need to operate in real-time, meaning they must respond to events or inputs within strict timing constraints. This could involve controlling processes with specific deadlines or responding to external stimuli with minimal delay.</p>
+<p>To perform their main tasks continuously (reading inputs, processing data, updating outputs), several methods can be used (in order of complexity):</p>
+<ul class="simple">
+<li><p><strong>continuous polling</strong>,</p></li>
+<li><p><strong>interrupt-driven</strong> programming,</p></li>
+<li><p>real-time operating system.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Programming a <strong>real-time operating system</strong> is an advanced method, not documented in this training.</p>
+</div>
+<section id="continuous-polling">
+<h3>Continuous polling<a class="headerlink" href="#continuous-polling" title="Link to this heading"></a></h3>
+<section id="operating-principle">
+<h4>Operating principle<a class="headerlink" href="#operating-principle" title="Link to this heading"></a></h4>
+<p>The use of an <strong>infinite loop</strong> is common because embedded systems often need to <strong>continuously perform tasks</strong>, such as reading sensor data, processing inputs, and updating outputs. Placing these tasks within a loop allows the program to execute them repeatedly, ensuring that the system remains operational.</p>
+<figure class="align-center" id="id3">
+<span id="fig-gen-polling"></span><a class="reference internal image-reference" href="../_images/gen_polling.png"><img alt="../_images/gen_polling.png" src="../_images/gen_polling.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Continuous polling principle. Inputs are called <span class="math notranslate nohighlight">\(E_x\)</span>, outputs <span class="math notranslate nohighlight">\(S_x\)</span>. Processes to run are called <span class="math notranslate nohighlight">\(C_x\)</span>. All the inputs are read at each iteration of the loop, the execution of processes depends on decisions made regarding the inputs, and outputs are updated.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>This method is the <strong>easiest way</strong> to implement an embedded program. It involves repeatedly checking the status of a resource or condition in a loop, making it suitable for straightforward applications and simple control tasks. It has <strong>low overhead</strong> compared to other techniques like interrupts or event-driven programming. In systems with limited resources or where efficiency is not a critical concern, continuous polling can be a practical choice.</p>
+<p>It also offers <strong>predictable behavior</strong> since the program flow is deterministic and controlled by the polling loop. This makes it easier to reason about the system’s behavior and predict its performance.</p>
+</section>
+<section id="limits">
+<h4>Limits<a class="headerlink" href="#limits" title="Link to this heading"></a></h4>
+<p>However, continuous polling also has <strong>limitations</strong>. The main one is its <strong>inefficiency in systems with high-frequency polling</strong> or <strong>long intervals between updates</strong>. Continuous polling involves repeatedly checking the status of a resource or condition in a loop, which can lead to excessive CPU utilization and wasted processing cycles, especially if the resource being polled changes infrequently.</p>
+<p>The <strong>execution time</strong> of each iteration of the loop is not necessarily constant, as shown in the figure <a class="reference internal" href="#fig-gen-polling"><span class="std std-numref">Fig. 8</span></a>. Iteration <em>EXEC1</em> is shorter than iteration <em>EXEC2</em>.</p>
+<p>There are other limitations to this method, such as increased CPU utilization, potential for delays in response time, or wasted processing cycles. This can lead to wasted processing power and energy consumption, particularly in battery-powered or energy-efficient systems.</p>
+</section>
+</section>
+<section id="interrupt-service-routines">
+<h3>Interrupt Service Routines<a class="headerlink" href="#interrupt-service-routines" title="Link to this heading"></a></h3>
+<p>To mitigate the limitations of the polling method, alternative approaches such as <strong>interrupt-driven</strong> programming, event-driven programming, or using dedicated <strong>hardware peripherals with interrupt capabilities</strong> may be more suitable, especially in systems with strict real-time requirements or resource-constrained environments. These approaches minimize CPU overhead, improve responsiveness, and enhance overall system efficiency compared to continuous polling.</p>
+<figure class="align-center" id="id4">
+<span id="fig-gen-isr"></span><a class="reference internal image-reference" href="../_images/gen_isr.png"><img alt="../_images/gen_isr.png" src="../_images/gen_isr.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Interrupt-driven programming principle. Inputs are called <span class="math notranslate nohighlight">\(E_x\)</span>, outputs <span class="math notranslate nohighlight">\(S_x\)</span>. Processes to run are called <span class="math notranslate nohighlight">\(C_x\)</span>. Specific processes are executed only when an event occurs.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>ISRs (Interrupt Service Routines) offer several advantages in microcontroller systems:</p>
+<ol class="arabic simple">
+<li><p><strong>Real-time responsiveness</strong>: ISRs allow microcontrollers to respond quickly to time-critical events or external stimuli. When an interrupt occurs, the microcontroller can immediately execute the corresponding ISR, ensuring timely processing of important tasks.</p></li>
+<li><p><strong>Efficient resource utilization</strong>: ISRs allow microcontrollers to handle multiple tasks concurrently without wasting processing cycles. By using interrupts, the microcontroller can respond to events as they occur, rather than constantly polling for changes, which can save processing time and energy.</p></li>
+<li><p><strong>Precise timing control</strong>: ISRs provide precise timing control, allowing microcontrollers to handle time-sensitive operations with accuracy. This is essential for applications such as sensor data acquisition, communication protocols, and control systems where timing requirements are critical.</p></li>
+<li><p><strong>Priority handling</strong>: Many microcontrollers support interrupt priorities, allowing critical interrupts to preempt lower-priority interrupts. This ensures that high-priority tasks are processed promptly, even when other interrupts are pending.</p></li>
+</ol>
+</section>
+<section id="rtos">
+<h3>RTOS<a class="headerlink" href="#rtos" title="Link to this heading"></a></h3>
+<p>Real-time operating systems (RTOS) are designed to <strong>manage tasks with strict timing requirements</strong>, ensuring that they meet deadlines and respond to events in a timely manner. Interrupt Service Routines (ISRs) are indeed fundamental components of <abbr title="real-time operating systems">RTOS</abbr>.</p>
+<p>They provide mechanisms for <strong>managing tasks</strong>, scheduling their execution, and ensuring that high-priority tasks are executed in a timely manner. They often include features such as task scheduling algorithms, priority-based scheduling, inter-task communication, and synchronization mechanisms.</p>
+<p>They provide a reliable operating environment for embedded systems and time-critical applications.</p>
+<p>There are many Real-Time Operating Systems (RTOS) available, each with its own features, strengths, and target applications. Let’s cite, for example: <em>FreeRTOS</em> a popular open-source RTOS, <em>RTOS-32</em> a real-time operating system designed for 32-bit x86 microprocessors or <em>QNX</em> a Unix-like RTOS.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="general.html" class="btn btn-neutral float-left" title="Embedded systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nucleo.html" class="btn btn-neutral float-right" title="Nucleo boards from STMicroelectronics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Julien Villemejane.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

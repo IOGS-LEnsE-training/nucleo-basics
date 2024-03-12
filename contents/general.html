@@ -7,7 +7,7 @@
   <title>Embedded systems &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=69701ec4" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
       <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
 
   
@@ -20,10 +20,11 @@
         <script src="../_static/documentation_options.js?v=2709fde1"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Microcontroller vs Processor" href="gen_microcontroller.html" />
+    <link rel="next" title="Polling vs Interrupts vs real-time OS" href="polling_interrupts_rtos.html" />
     <link rel="prev" title="Nucleo boards - Basics" href="../index.html" /> 
 </head>
 
@@ -50,11 +51,28 @@
               <p class="caption" role="heading"><span class="caption-text">Embedded systems</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Microcontrollers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gen_microcontroller.html">     Microcontroller vs Processor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen_polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Embedded systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-an-embedded-system">What is an embedded system ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#applications-of-embedded-systems">Applications of embedded systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#brains-of-embedded-systems">Brains of embedded systems</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#microcontrollers-vs-microprocessors">Microcontrollers vs Microprocessors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-microprocessor">What is a microprocessor ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#digital-data-operations">Digital data operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-width-and-address-space">Data width and address space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#instructions-set">Instructions set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main-structure-of-a-computer-program">Main structure of a computer program</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-a-microcontroller">What is a microcontroller ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#purpose-and-complexity">Purpose and complexity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nucleo.html">     Nucleo boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_project.html">     First project</a></li>
 </ul>
@@ -100,21 +118,108 @@
              
   <section id="embedded-systems">
 <h1>Embedded systems<a class="headerlink" href="#embedded-systems" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="gen_microcontroller.html">     Microcontroller vs Processor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gen_polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
-</ul>
-</div>
-<section id="id1">
-<h2>Embedded systems<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="what-is-an-embedded-system">
+<h2>What is an embedded system ?<a class="headerlink" href="#what-is-an-embedded-system" title="Link to this heading"></a></h2>
 <p>An <strong>embedded system</strong> is a combination of <strong>hardware and software</strong> designed for a specific function within a larger system. It typically includes one or more microcontrollers or microprocessors, along with other components like sensors, actuators, and communication interfaces.</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/gen_emb_sys_structure.png"><img alt="../_images/gen_emb_sys_structure.png" src="../_images/gen_emb_sys_structure.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-text">Structure of an embedded system.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Structure of an embedded system.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<p>Embedded systems are simplified hardware application for a better reliability, a reduction in power consumption and a <strong>high level of responsiveness to external demands</strong>. But it has limited number of resources (memory, <abbr title="inputs and outputs">I/O</abbr>).</p>
+<section id="applications-of-embedded-systems">
+<h3>Applications of embedded systems<a class="headerlink" href="#applications-of-embedded-systems" title="Link to this heading"></a></h3>
+<p>Embedded systems are prevalent in <strong>numerous applications</strong> across various industries. Here are some examples:</p>
+<ul class="simple">
+<li><p><strong>Automotive</strong>: Embedded systems control engine management, anti-lock braking systems (ABS), airbag deployment, entertainment systems, and navigation.</p></li>
+<li><p><strong>Consumer Electronics</strong>: Smartphones, smart TVs, digital cameras, home appliances (microwaves, washing machines), and wearable devices like fitness trackers all utilize embedded systems.</p></li>
+<li><p><strong>Industrial Automation</strong>: Programmable Logic Controllers (PLCs) and Supervisory Control and Data Acquisition (SCADA) systems control manufacturing processes, robotic assembly lines, and factory automation.</p></li>
+<li><p><strong>Medical Devices</strong>: Embedded systems are found in medical imaging equipment (MRI, CT scanners), patient monitoring systems, infusion pumps, and pacemakers.</p></li>
+<li><p><strong>Aerospace and Defense</strong>: Avionics systems in aircraft, missile guidance systems, unmanned aerial vehicles (UAVs), and military communication systems rely heavily on embedded systems.</p></li>
+<li><p><strong>Internet of Things</strong> (IoT): IoT devices such as smart thermostats, security cameras, environmental sensors, and smart home automation systems are all examples of embedded systems interconnected through the internet.</p></li>
+</ul>
+<p>These examples highlight the diverse range of applications where embedded systems play a crucial role in providing functionality, <strong>control</strong>, and <strong>automation</strong>.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/gen_emb_sys_robot_example.png"><img alt="../_images/gen_emb_sys_robot_example.png" src="../_images/gen_emb_sys_robot_example.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">An holonomic robot. Students project from LEnsE.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="brains-of-embedded-systems">
+<h3>Brains of embedded systems<a class="headerlink" href="#brains-of-embedded-systems" title="Link to this heading"></a></h3>
+<p>Embedded systems can have <strong>various types of processing units</strong>, or “brains,” depending on the requirements of the application. Some common types include:</p>
+<ol class="arabic simple">
+<li><p><strong>Microcontrollers</strong>: Integrated circuits with a CPU, memory, and <abbr title="inputs and outputs">I/O</abbr> peripherals on a single chip. They are commonly used in low-power, cost-sensitive applications.</p></li>
+<li><p><strong>Microprocessors</strong>: These are similar to the CPUs found in desktop computers but are optimized for embedded applications. They require external memory and peripheral components.</p></li>
+<li><p>Digital Signal Processors (DSPs): Specialized microprocessors designed for processing digital signals in real-time. They are commonly used in applications such as audio processing, image processing, and telecommunications.</p></li>
+<li><p>Field-Programmable Gate Arrays (FPGAs): These are programmable logic devices that can be configured to implement custom digital circuits. They offer high performance and flexibility but require more development effort compared to off-the-shelf processors.</p></li>
+</ol>
+<p>The <strong>choice of processing unit</strong> depends on factors such as <strong>performance requirements</strong>, <strong>power consumption</strong> constraints, cost considerations, and the specific needs of the application.</p>
+</section>
+</section>
+<section id="microcontrollers-vs-microprocessors">
+<h2>Microcontrollers vs Microprocessors<a class="headerlink" href="#microcontrollers-vs-microprocessors" title="Link to this heading"></a></h2>
+<section id="what-is-a-microprocessor">
+<h3>What is a microprocessor ?<a class="headerlink" href="#what-is-a-microprocessor" title="Link to this heading"></a></h3>
+<p>A microprocessor is a central processing unit (CPU) contained on a single integrated circuit. It serves as the brain of a computer or embedded system, handling instructions and processing data according to the program instructions stored in memory.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/gen_microproc_structure.png"><img alt="../_images/gen_microproc_structure.png" src="../_images/gen_microproc_structure.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Generic block diagram of a microprocessor system.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Microprocessors typically include arithmetic logic units (ALUs), control units, registers, and various other components necessary for executing instructions and managing data. They are widely used in personal computers, servers, smartphones, embedded systems, and other electronic devices.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/gen_microproc_cpu.png"><img alt="../_images/gen_microproc_cpu.png" src="../_images/gen_microproc_cpu.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Generic block diagram of a Central Process Unit (CPU).</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A microprocessor contains millions of tiny components like transistors, registers, and diodes that work together.</p>
+<section id="digital-data-operations">
+<h4>Digital data operations<a class="headerlink" href="#digital-data-operations" title="Link to this heading"></a></h4>
+<p>Microprocessors operate on <strong>digital data</strong>, which are represented using <strong>binary digits</strong> or <strong>bits</strong> (0 and 1). These digital signals represent <strong>various types of data</strong>, including numbers, text, control instructions, and multimedia content, among others.</p>
+<p>The microprocessor manipulates and processes this digital data according to the instructions provided by the program being executed, performing tasks such as <strong>arithmetic operations</strong>, <strong>logical operations</strong>, <strong>data manipulation</strong>, and control flow operations.</p>
+</section>
+<section id="data-width-and-address-space">
+<h4>Data width and address space<a class="headerlink" href="#data-width-and-address-space" title="Link to this heading"></a></h4>
+<p>Depending on its architecture, microprocessors can process data and perform calculations using a <strong>specific number of binary digits</strong> (bits). Operations compute by a N-bit CPU can handle data in N-bit chunks, allowing to encode up to <span class="math notranslate nohighlight">\(2^{N}\)</span> different values. All the data buses, around the proccess unit, have a width of N bits.</p>
+<p>This number specifies also the <strong>amount of addressable memory</strong>.</p>
+</section>
+<section id="instructions-set">
+<h4>Instructions set<a class="headerlink" href="#instructions-set" title="Link to this heading"></a></h4>
+<p>A Microprocessor takes a bunch of <strong>instructions</strong> in <strong>machine language</strong> (also called <em>assembly language</em>) and executes them. These instructions tell the processor what it has to do with data.</p>
+<p>There are three main kinds of operations in a microprocessor:</p>
+<ul class="simple">
+<li><p><strong>arithmetic and logic operations</strong> (like addition, substraction, multiplication…) on integers with an <em>arithmetic and logic unit</em> (ALU), or/and on real numbers with a <em>floating-point unit</em> (FPU),</p></li>
+<li><p><strong>transfer data</strong> from one location to another,</p></li>
+<li><p><strong>jumps</strong> from one location to another thanks to a <em>program counter</em> (PC), a register that stores the address of the next instruction.</p></li>
+</ul>
+<p>Microprocessors are <strong>general-purpose units</strong> and can have a set of thousands of different instructions.</p>
+</section>
+<section id="main-structure-of-a-computer-program">
+<h4>Main structure of a computer program<a class="headerlink" href="#main-structure-of-a-computer-program" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="what-is-a-microcontroller">
+<h3>What is a microcontroller ?<a class="headerlink" href="#what-is-a-microcontroller" title="Link to this heading"></a></h3>
+<p>Microcontrollers are <strong>compact integrated circuits</strong> that serve as the brains of various electronic devices, controlling their operation by executing pre-programmed instructions. They handle tasks such as monitoring inputs, processing data, and controlling outputs, making them essential for automation, sensing, and control in devices like smartphones, appliances, and automotive systems.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/gen_microcont_structure.png"><img alt="../_images/gen_microcont_structure.png" src="../_images/gen_microcont_structure.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Generic block diagram of a microcontroller.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The main difference between a microcontroller (UC) and a microprocessor lies in their architecture and intended use. A microcontroller is a <strong>single-chip computer</strong> containing: a CPU, memories (RAM and ROM/Flash), <abbr title="inputs and outputs">I/O</abbr> peripherals, and other components needed for specific applications.</p>
+<p>In contrast, a microprocessor is a standalone CPU chip without integrated memory or peripherals.</p>
+<section id="purpose-and-complexity">
+<h4>Purpose and complexity<a class="headerlink" href="#purpose-and-complexity" title="Link to this heading"></a></h4>
+<p>Microcontrollers are typically <strong>used in embedded systems</strong> where space, power consumption, and cost are <strong>critical factors</strong>. They are designed for <strong>specific tasks</strong> and are often programmed to control devices or perform dedicated functions.</p>
+<p>They are generally simpler in terms of architecture and functionality compared to microprocessors. They are optimized for low-level control tasks and real-time operation.</p>
+</section>
+</section>
 </section>
 </section>
 
@@ -123,7 +228,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Nucleo boards - Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gen_microcontroller.html" class="btn btn-neutral float-right" title="Microcontroller vs Processor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="polling_interrupts_rtos.html" class="btn btn-neutral float-right" title="Polling vs Interrupts vs real-time OS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

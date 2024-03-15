@@ -1,8 +1,8 @@
 MBED Compiler and Keil Studio IDE
 #################################
 
-Compiler and Programming langages of microcontrollers 
-*****************************************************
+Programming languages for microcontrollers 
+******************************************
 
 Microcontrollers (UCs) typically have **specific constraints and architectures** that developers must consider when designing software for them:
 
@@ -51,15 +51,55 @@ Mbed has a vibrant community of developers, contributors, and partners who contr
 
 The **LEnsE** team also develops **ressources** (libraries and examples) for Mbed-OS: `MBED6 Libraries <https://iogs-lense-ressources.github.io/mbed6-libraries/>`_.
 
-
-MBED Studio
-***********
-
-https://os.mbed.com/studio/
+.. _keil_studio_cloud:
 
 Keil Studio Cloud
 *****************
 
-<https://www.keil.arm.com/>
+The Keil division of Arm® provides a **web-based platform** for embedded software development, particularly for STM32 microcontroller-based projects, called **Keil Studio Cloud**
 
+This online version integrates various tools necessary for embedded development, including code editing, compiling, debugging, and project management, all within a web browser interface.
+
+You can access to this platform by following this link: https://www.keil.arm.com/. 
+
+.. figure:: ../_static/images/keil/keil_website.png
+	:align: center	
+
+To manage project under this web-based tool, you need to **create an account** on the Keil website. Click :menuselection:`Keil Studio Cloud`.
+
+.. figure:: ../_static/images/keil/keil_signup.png
+	:width: 60%
+	:align: center
+
+Then :menuselection:`Sign Up`.
+
+Follow the different steps until your account is validated. 
+
+.. note::
+
+	The validation of your email address may take a few minutes.
+
+.. figure:: ../_static/images/keil/keil_cloud.png
+	:width: 80%
+	:align: center
+
+	Interface of Keil Studio Cloud.
+
+
+MBED Studio
+***********
+
+A client (or local) version, called **Mbed Studio** and developed by Arm® is also available.
+
+It provides a comprehensive set of tools for developing, compiling, debugging, and deploying firmware for microcontroller-based devices. It offers the same features as Keil Studio Cloud, except that it required to be locally installed on your computer. 
+
+You can download the last version on the Mbed web site: https://os.mbed.com/studio/.
+
+.. figure:: ../_static/images/keil/keil_mbed_studio.png
+	:width: 80%
+	:align: center
+
+	Interface of MBED Studio.
+
+At first use, you must be connected to the Internet and have an Arm® account. But after the first use, no internet connection is required.
 

@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Main program structure" href="gen_main_structure.html" />
+    <link rel="next" title="First project with Nucleo / MBED" href="nucleo_fisrt_project.html" />
     <link rel="prev" title="Nucleo boards from STMicroelectronics" href="nucleo.html" /> 
 </head>
 
@@ -53,23 +53,21 @@
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="nucleo.html">     Nucleo boards</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">     MBED Compiler and Keil IDE</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#compiler-and-programming-langages-of-microcontrollers">Compiler and Programming langages of microcontrollers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mbed-compiler">MBED Compiler</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#compiler-for-arm-core">Compiler for ARM core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiler-and-programming-langages-of-microcontrollers">Compiler and Programming langages of microcontrollers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assembly-language">Assembly language</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#c-language">C++ language</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#keil-studio-ide">Keil Studio IDE</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#online-version">Online Version</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#offline-version">Offline Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-free-open-source-iot-operating-system">MBED free open source IoT operating system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keil-studio-cloud">Keil Studio Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#first-project">First project</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="nucleo_fisrt_project.html">     First project with Nucleo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen_main_structure.html">     Main program structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen_debugging.html">     Debugging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gen_libs.html">     External libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nucleo.html#other-ressources">Other ressources</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="first_project.html">     First project</a></li>
@@ -119,27 +117,49 @@
 <h1>MBED Compiler and Keil Studio IDE<a class="headerlink" href="#mbed-compiler-and-keil-studio-ide" title="Link to this heading"></a></h1>
 <section id="compiler-and-programming-langages-of-microcontrollers">
 <h2>Compiler and Programming langages of microcontrollers<a class="headerlink" href="#compiler-and-programming-langages-of-microcontrollers" title="Link to this heading"></a></h2>
-</section>
-<section id="mbed-compiler">
-<h2>MBED Compiler<a class="headerlink" href="#mbed-compiler" title="Link to this heading"></a></h2>
-<section id="compiler-for-arm-core">
-<h3>Compiler for ARM core<a class="headerlink" href="#compiler-for-arm-core" title="Link to this heading"></a></h3>
+<p>Microcontrollers (UCs) typically have <strong>specific constraints and architectures</strong> that developers must consider when designing software for them:</p>
+<ol class="arabic simple">
+<li><p>Memory Constraints and Code Size</p></li>
+<li><p>Processing Power</p></li>
+<li><p>Peripheral Limitations, but high level of responsiveness to external demands</p></li>
+</ol>
+<p>Understanding and addressing these constraints is essential for designing robust, efficient, and reliable software for microcontroller-based systems. It requires careful consideration of hardware limitations, application requirements, and software design principles throughout the development process.</p>
+<section id="assembly-language">
+<h3>Assembly language<a class="headerlink" href="#assembly-language" title="Link to this heading"></a></h3>
+<p>Assembly language is commonly used for programming microcontrollers due to <strong>its low-level nature</strong> and direct control over hardware resources. When programming microcontrollers in assembly language, developers write <strong>instructions that directly correspond to the machine-level operations</strong> executed by the microcontroller’s processor. This level of control can be beneficial for applications requiring precise timing, minimal resource usage, or interaction with specific hardware features.</p>
+<p>While programming microcontrollers in assembly language provides maximum control and efficiency, it <strong>comes with challenges</strong> such as complexity, longer development time, and reduced portability compared to higher-level languages like C or C++.</p>
 </section>
 <section id="c-language">
 <h3>C++ language<a class="headerlink" href="#c-language" title="Link to this heading"></a></h3>
+<p>C++ is increasingly being used for microcontroller programming, especially with microcontrollers that have more <strong>powerful processors</strong> and sufficient memory resources. Here are some key points about using C++ for microcontroller development:</p>
+<ol class="arabic simple">
+<li><p><strong>Object-Oriented Programming (OOP)</strong>: C++ is an object-oriented programming language, allowing developers to use concepts like classes, inheritance, encapsulation, and polymorphism. This can lead to <strong>more modular</strong> and maintainable code, which is advantageous for larger projects.</p></li>
+<li><p><strong>Standard Template Library (STL)</strong>: C++ includes a rich standard library, including containers (like vectors, arrays, and maps), algorithms, and utilities. Although the standard library may not always be suitable for resource-constrained microcontrollers, parts of it can still be utilized depending on the microcontroller’s capabilities.</p></li>
+<li><p><strong>Portability</strong>: C++ code written for microcontrollers can be highly portable across different platforms, provided that the code doesn’t rely on platform-specific features or hardware-dependent optimizations.</p></li>
+<li><p><strong>Toolchain Support</strong>: Many modern microcontroller development toolchains, including compilers and IDEs, provide support for C++ development. This includes popular microcontroller families such as ARM Cortex-M series, AVR, PIC, and others.</p></li>
+</ol>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>When using C++ for microcontroller development, it’s essential to be mindful of the <strong>specific constraints and characteristics</strong> of the target microcontroller, including its memory resources, processing power, and available peripherals.</p>
+</div>
+<p>C++ is not a low-level language that can be understood by a microcontroller core. Using C++ language requires a compiler, that translates this high-level language to the native language of the microcontroller (assembly instructions).</p>
 </section>
 </section>
-<section id="keil-studio-ide">
-<h2>Keil Studio IDE<a class="headerlink" href="#keil-studio-ide" title="Link to this heading"></a></h2>
-<section id="online-version">
-<h3>Online Version<a class="headerlink" href="#online-version" title="Link to this heading"></a></h3>
+<section id="mbed-free-open-source-iot-operating-system">
+<h2>MBED free open source IoT operating system<a class="headerlink" href="#mbed-free-open-source-iot-operating-system" title="Link to this heading"></a></h2>
+<p>Mbed is an <strong>open-source embedded operating system</strong> designed by Arm®, a leading semiconductor and software design company, for microcontroller-based applications. It provides a platform and ecosystem for rapid prototyping, development, and deployment of embedded systems.</p>
+<p>It includes <strong>Mbed OS</strong>, a lightweight, <strong>open-source operating system</strong> specifically designed for microcontrollers. It abstracts away low-level hardware details and provides a consistent API for accessing peripherals.</p>
+<p>It also provides a comprehensive set of development tools, including a free Integrated Development Environment (IDE) called the <strong>Mbed Studio</strong>.</p>
+<p>Mbed has a vibrant community of developers, contributors, and partners who contribute libraries, example codes, and resources to the ecosystem. This rich ecosystem makes it easier for developers to find support, collaborate, and leverage existing components for their projects.</p>
+<p>The <strong>LEnsE</strong> team also develops <strong>ressources</strong> (libraries and examples) for Mbed-OS: <a class="reference external" href="https://iogs-lense-ressources.github.io/mbed6-libraries/">MBED6 Libraries</a>.</p>
 </section>
-<section id="offline-version">
-<h3>Offline Version<a class="headerlink" href="#offline-version" title="Link to this heading"></a></h3>
+<section id="mbed-studio">
+<h2>MBED Studio<a class="headerlink" href="#mbed-studio" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://os.mbed.com/studio/">https://os.mbed.com/studio/</a></p>
 </section>
-</section>
-<section id="first-project">
-<h2>First project<a class="headerlink" href="#first-project" title="Link to this heading"></a></h2>
+<section id="keil-studio-cloud">
+<h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
+<p>&lt;<a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>&gt;</p>
 </section>
 </section>
 
@@ -148,7 +168,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="nucleo.html" class="btn btn-neutral float-left" title="Nucleo boards from STMicroelectronics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gen_main_structure.html" class="btn btn-neutral float-right" title="Main program structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="nucleo_fisrt_project.html" class="btn btn-neutral float-right" title="First project with Nucleo / MBED" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

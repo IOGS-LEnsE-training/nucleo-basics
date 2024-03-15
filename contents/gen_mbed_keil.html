@@ -53,14 +53,14 @@
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="nucleo.html">     Nucleo boards</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">     MBED Compiler and Keil IDE</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#compiler-and-programming-langages-of-microcontrollers">Compiler and Programming langages of microcontrollers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#programming-languages-for-microcontrollers">Programming languages for microcontrollers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#assembly-language">Assembly language</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#c-language">C++ language</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#mbed-free-open-source-iot-operating-system">MBED free open source IoT operating system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#keil-studio-cloud">Keil Studio Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="nucleo_fisrt_project.html">     First project with Nucleo</a></li>
@@ -115,8 +115,8 @@
              
   <section id="mbed-compiler-and-keil-studio-ide">
 <h1>MBED Compiler and Keil Studio IDE<a class="headerlink" href="#mbed-compiler-and-keil-studio-ide" title="Link to this heading"></a></h1>
-<section id="compiler-and-programming-langages-of-microcontrollers">
-<h2>Compiler and Programming langages of microcontrollers<a class="headerlink" href="#compiler-and-programming-langages-of-microcontrollers" title="Link to this heading"></a></h2>
+<section id="programming-languages-for-microcontrollers">
+<h2>Programming languages for microcontrollers<a class="headerlink" href="#programming-languages-for-microcontrollers" title="Link to this heading"></a></h2>
 <p>Microcontrollers (UCs) typically have <strong>specific constraints and architectures</strong> that developers must consider when designing software for them:</p>
 <ol class="arabic simple">
 <li><p>Memory Constraints and Code Size</p></li>
@@ -153,13 +153,43 @@
 <p>Mbed has a vibrant community of developers, contributors, and partners who contribute libraries, example codes, and resources to the ecosystem. This rich ecosystem makes it easier for developers to find support, collaborate, and leverage existing components for their projects.</p>
 <p>The <strong>LEnsE</strong> team also develops <strong>ressources</strong> (libraries and examples) for Mbed-OS: <a class="reference external" href="https://iogs-lense-ressources.github.io/mbed6-libraries/">MBED6 Libraries</a>.</p>
 </section>
+<section id="keil-studio-cloud">
+<span id="id1"></span><h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
+<p>The Keil division of Arm® provides a <strong>web-based platform</strong> for embedded software development, particularly for STM32 microcontroller-based projects, called <strong>Keil Studio Cloud</strong></p>
+<p>This online version integrates various tools necessary for embedded development, including code editing, compiling, debugging, and project management, all within a web browser interface.</p>
+<p>You can access to this platform by following this link: <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>.</p>
+<figure class="align-center">
+<img alt="../_images/keil_website.png" src="../_images/keil_website.png" />
+</figure>
+<p>To manage project under this web-based tool, you need to <strong>create an account</strong> on the Keil website. Click <span class="menuselection">Keil Studio Cloud</span>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/keil_signup.png"><img alt="../_images/keil_signup.png" src="../_images/keil_signup.png" style="width: 60%;" /></a>
+</figure>
+<p>Then <span class="menuselection">Sign Up</span>.</p>
+<p>Follow the different steps until your account is validated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The validation of your email address may take a few minutes.</p>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/keil_cloud.png"><img alt="../_images/keil_cloud.png" src="../_images/keil_cloud.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Interface of Keil Studio Cloud.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 <section id="mbed-studio">
 <h2>MBED Studio<a class="headerlink" href="#mbed-studio" title="Link to this heading"></a></h2>
-<p><a class="reference external" href="https://os.mbed.com/studio/">https://os.mbed.com/studio/</a></p>
-</section>
-<section id="keil-studio-cloud">
-<h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
-<p>&lt;<a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>&gt;</p>
+<p>A client (or local) version, called <strong>Mbed Studio</strong> and developed by Arm® is also available.</p>
+<p>It provides a comprehensive set of tools for developing, compiling, debugging, and deploying firmware for microcontroller-based devices. It offers the same features as Keil Studio Cloud, except that it required to be locally installed on your computer.</p>
+<p>You can download the last version on the Mbed web site: <a class="reference external" href="https://os.mbed.com/studio/">https://os.mbed.com/studio/</a>.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/keil_mbed_studio.png"><img alt="../_images/keil_mbed_studio.png" src="../_images/keil_mbed_studio.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Interface of MBED Studio.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>At first use, you must be connected to the Internet and have an Arm® account. But after the first use, no internet connection is required.</p>
 </section>
 </section>
 

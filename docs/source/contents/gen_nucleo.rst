@@ -30,8 +30,43 @@ Nucleo boards serve as a **convenient platform** for learning embedded systems p
 
 
 
-Pinouts of some boards
-######################
+Pins and their functions
+########################
+
+Each pin of the boards can have multiple functions. But only one can be used at a time.
+
+.. figure:: ../_static/images/nucleo/nucleo_pin_functions.png
+	:align: center
+
+	Example of a Nucleo pin.
+
+In the previous example, the **PA_7** pin (name given by *STMicroelectronics*) can be used as:
+
+* a **digital input or output** (true for lot of pins of STM32 microcontrollers)
+* an **analog input**, linked to an :abbr:`ADC (Analog-to-Digital Converter)` , as indicated by the :menuselection:`AnalogIn` tag
+* a **pulsed-width modulated output**, as indicated by the :menuselection:`PWM` tag
+* another specialized function pin (:abbr:`MOSI (Master Out Slave In)` pin of a :abbr:`SPI (Serial Peripheral Interface)` communication in this case)
+
+Other options are possible, such as:
+
+* **analog output**, linked to a :abbr:`DAC (Digital-to-Analog Converter)` , indicated by an :menuselection:`AnalogOut` tag
+* :abbr:`UART (Universal Asynchronous Receiver/Transmitter)` or :abbr:`USART (Universal Synchronous/Asynchronous Receiver/Transmitter)` communication pins, indicated by a :menuselection:`Serial` tag
+* :abbr:`I2C (Inter-Integrated Circuit)` communication pins, indicated by an :menuselection:`I2C` tag
+* :abbr:`SPI (Serial Peripheral Interface)` communication pins, indicated by a :menuselection:`SPI` tag
+
+Pin indicated with a :menuselection:`GND` tag correspond to the ground voltage, i.e. the 0V reference voltage of the board.
+
+Some other pins are not directly linked to the microcontroller, but give access to regulated power supply: such as **3.3V** or **5V**.
+
+.. warning::
+
+	Regulated voltage outputs are current-limited. See the documentation of the Nucleo board you are using.
+	
+A power supply input can be used to power the board. It is tagged as :menuselection:`Vin`.
+
+.. warning::
+
+	The input **Vin** voltage must be between 7 and 12 volts.
 
 .. _nucleo_g431kb_pinouts:
 
@@ -45,7 +80,25 @@ PICTURE OF PINOUT
 L476RG board - Nucleo-64
 ************************
 
-PICTURE OF PINOUT
+Download :download:`Nucleo-64_L476RG <../_static/docs/Nucleo-64_L476RG.pdf>`
+
+Morpho connectors
+=================
+
+.. figure:: ../_static/images/nucleo/l476rg/l476rg_CN7.png
+	:align: center
+	
+.. figure:: ../_static/images/nucleo/l476rg/l476rg_CN10.png
+	:align: center	
+
+Arduino connectors
+==================
+
+.. figure:: ../_static/images/nucleo/l476rg/l476rg_CN8.png
+	:align: center
+	
+.. figure:: ../_static/images/nucleo/l476rg/l476rg_CN5.png
+	:align: center	
 
 .. _nucleo_f767zi_pinouts:
 

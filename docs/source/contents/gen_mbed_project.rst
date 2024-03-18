@@ -305,17 +305,72 @@ Right-click on the project you want to duplicate and click :menuselection:`Dupli
 .. figure:: ../_static/images/keil/keil_duplicate.png
 	:align: center
 	:width: 70%
-	
-A second project with the same name following by the term *copy* is generated. You can change its name by right-click on the new project and then click :menuselection:`Rename` . 
+
+|
+
+A second project with the same name following by the term *copy* is generated. 
 
 .. figure:: ../_static/images/keil/keil_duplicate_project.png
 	:align: center
-	:width: 70%
-	
-You can also set this new project as the active one by right-click on the project and then click :menuselection:`Set Active Project` . 
+	:scale: 60%
+
+|
+
+You can **change its name** by right-click on the new project and then click :menuselection:`Rename` . 
+
+You can also **set this new project as the active one** by right-click on the project and then click :menuselection:`Set Active Project` . 
 
 Pre-compiler informations
 *************************
 
+A specific file, called :file:`mbed_app.json` , allows developers to specify configuration options and parameters for their Mbed applications.
 
+This JSON file is typically used to configure various aspects of the application, such as: target configuration, feature configuration, peripheral configuration or library configuration.
 
+Baremetal option
+================
+
+**Baremetal** refers to programming directly on hardware without the use of an operating system. In baremetal programming, developers have direct control over the hardware resources and can write code that interacts directly with the hardware peripherals and registers. 
+
+.. code-block::
+
+	{
+		"requires": [ "bare-metal"],
+		"target_overrides": {
+		  "*": {
+			"target.printf_lib": "minimal-printf",
+			"platform.minimal-printf-enable-floating-point": true,
+			"platform.stdio-baud-rate": 115200
+		  }
+		}
+	}
+	
+In this example, the **baremetal** modules are required.
+
+The other options, specified in the target_overrides part, allow the use of the :code:`printf()` function (linked to the virtual serial port of the USB connection) and set the baudrate of the transmission to 115200 bauds.
+
+SD card, FAT filesystem options
+===============================
+
+If you want to use a **SD card** and a **FAT filesystem**, other options are required. For example:
+
+.. code-block::
+
+	{
+		"requires": [ "bare-metal", "rtos-api", "sd","filesystem","fat_chan"],
+		"target_overrides": {
+		  "*": {
+			"target.components_add": [ "SD" ]
+		  }
+		}
+	}
+	
+	
+CMSIS-DSP library
+=================
+
+.. code-block::
+
+	{
+		"requires": ["bare-metal","cmsis-dsp"]
+	}

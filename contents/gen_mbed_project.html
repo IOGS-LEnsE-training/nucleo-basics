@@ -61,10 +61,17 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mbed-studio-ide">MBED Studio IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#define-your-workspace">Define your workspace</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">Create your first project</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#blinky-baremetal-example">Blinky Baremetal Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-and-test">Compile and test</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main-file">Main file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-a-target">Select a target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile">Compile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flash-the-program">Flash the program</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#duplicate-a-project">Duplicate a project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-compiler-informations">Pre-compiler informations</a></li>
 </ul>
@@ -117,7 +124,7 @@
            <div itemprop="articleBody">
              
   <section id="creation-of-a-mbed-project">
-<h1>Creation of a MBED project<a class="headerlink" href="#creation-of-a-mbed-project" title="Link to this heading"></a></h1>
+<span id="mbed-project"></span><h1>Creation of a MBED project<a class="headerlink" href="#creation-of-a-mbed-project" title="Link to this heading"></a></h1>
 <p>If you want to use MBED Studio, see <a class="reference internal" href="#mbed-studio-project"><span class="std std-ref">MBED Studio first project</span></a>.</p>
 <section id="keil-studio-cloud">
 <h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
@@ -134,10 +141,10 @@
 <h3>Keil Studio Cloud IDE<a class="headerlink" href="#keil-studio-cloud-ide" title="Link to this heading"></a></h3>
 <p>You will access to the main window of the <abbr title="Integrated Development Environment">IDE</abbr>.</p>
 <p>This interface is divided in a classical manner with a <strong>project management</strong> area (on the left side of the interface), a <strong>text editor</strong> area (in the top-right part of the interface) and an <strong>output information</strong> area (in the bottom-right part of the interface).</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id4">
 <img alt="../_images/keil_cloud_plus.png" src="../_images/keil_cloud_plus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to :</p>
@@ -149,17 +156,17 @@
 <section id="create-your-first-project">
 <h3>Create your first project<a class="headerlink" href="#create-your-first-project" title="Link to this heading"></a></h3>
 <p>To create a new project, you can click <span class="menuselection">+ New Project</span> (icon surrounded by a <strong>red</strong> border on the previous figure) or click <span class="menuselection">File -&gt; New… -&gt; MBED Project</span>.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id5">
 <img alt="../_images/keil_cloud_new_project_mbed.png" src="../_images/keil_cloud_new_project_mbed.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/keil_cloud_new_project_mbed_blinky.png"><img alt="../_images/keil_cloud_new_project_mbed_blinky.png" src="../_images/keil_cloud_new_project_mbed_blinky.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -193,28 +200,33 @@
 <h3>MBED Studio IDE<a class="headerlink" href="#mbed-studio-ide" title="Link to this heading"></a></h3>
 <p>You will access to the main window of the <abbr title="Integrated Development Environment">IDE</abbr>.</p>
 <p>This interface is divided in a classical manner with a <strong>project management</strong> area (on the left side of the interface), a <strong>text editor</strong> area (in the top-right part of the interface) and an <strong>output information</strong> area (in the bottom-right part of the interface).</p>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id7">
 <img alt="../_images/keil_mbed_studio_plus.png" src="../_images/keil_mbed_studio_plus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Main window of the MBED Studio software.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Main window of the MBED Studio software.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to the list of the projects you develop (icon surrounded by a <strong>pink</strong> border).</p>
 </section>
+<section id="define-your-workspace">
+<h3>Define your workspace<a class="headerlink" href="#define-your-workspace" title="Link to this heading"></a></h3>
+<p>Before creating your first project, you need to specify where you want to store your projects.</p>
+<p>Click <span class="menuselection">File -&gt; Open Workspace…</span>. Then select the directory where you want to store your projects.</p>
+</section>
 <section id="id1">
 <h3>Create your first project<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <p>To create a new project, you can click <span class="menuselection">+ New Project</span> (icon surrounded by a <strong>red</strong> border on the previous figure) or click <span class="menuselection">File -&gt; New Program</span>.</p>
-<figure class="align-center" id="id6">
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_program.png"><img alt="../_images/keil_mbed_studio_new_program.png" src="../_images/keil_mbed_studio_new_program.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><span class="menuselection">File -&gt; New Program</span> in MBED Studio.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><span class="menuselection">File -&gt; New Program</span> in MBED Studio.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_mbed_blinky.png"><img alt="../_images/keil_mbed_studio_new_project_mbed_blinky.png" src="../_images/keil_mbed_studio_new_project_mbed_blinky.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -222,10 +234,10 @@
 <p>To avoid any compilation conflicts with other libraries, make sure to select the <strong>baremetal</strong> project in the <strong>MBED 6</strong> version of <em>MBED-OS</em>.</p>
 </div>
 <p>When the type of project is selected, you can change the <strong>project name</strong>. Give a specific name corresponding to the content of the project.</p>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_add.png"><img alt="../_images/keil_mbed_studio_new_project_add.png" src="../_images/keil_mbed_studio_new_project_add.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Add a new project in MBED Studio.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Add a new project in MBED Studio.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -246,8 +258,88 @@
 <p>Now it’s time to test your first application.</p>
 </section>
 </section>
-<section id="blinky-baremetal-example">
-<span id="mbed-blinky"></span><h2>Blinky Baremetal Example<a class="headerlink" href="#blinky-baremetal-example" title="Link to this heading"></a></h2>
+<section id="compile-and-test">
+<span id="mbed-blinky"></span><h2>Compile and test<a class="headerlink" href="#compile-and-test" title="Link to this heading"></a></h2>
+<p>MBED-OS primarily uses <strong>C++</strong> as the programming language for developing applications and firmware.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not familiar with the <strong>C++ language</strong>, tutorials are available at the following address: <a class="reference external" href="https://iogs-lense-training.github.io/cpp-basics-oop/">C++ - Basics and Object-Oriented Programming</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most of the following steps are the same in <em>Keil Studio Cloud</em> and <em>MBED Studio</em>. Otherwise, a note will specify the differences.</p>
+</div>
+<section id="main-file">
+<h3>Main file<a class="headerlink" href="#main-file" title="Link to this heading"></a></h3>
+<p>On the left side of the interface, click on your project (here <span class="menuselection">01_First_Project</span> to display its contents.</p>
+<figure class="align-center" id="id11">
+<img alt="../_images/keil_main.png" src="../_images/keil_main.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">First project contents.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Projects basically contain about ten files and directories. They are useful at various stages of the project realization.</p>
+<p>But the <strong>most essential</strong> is the <code class="file docutils literal notranslate"><span class="pre">main.cpp</span></code> file. It contains the <code class="code docutils literal notranslate"><span class="pre">main()</span></code> function that serves as the entry point of the program.</p>
+<p>Click <span class="menuselection">main.cpp</span> file to open it on the top-right side of the interface.</p>
+<p><em>We will see later its content.</em></p>
+</section>
+<section id="select-a-target">
+<h3>Select a target<a class="headerlink" href="#select-a-target" title="Link to this heading"></a></h3>
+<p>Although the MBED-OS operating system is designed for a wide range of microcontrollers from the STM32 family, it is necessary to <strong>specify</strong> to the compiler for which <strong>target</strong> the program is being developed.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/keil_target_select.png"><img alt="../_images/keil_target_select.png" src="../_images/keil_target_select.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Target selection.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At LEnsE, we mainly use Nucleo-L476RG and Nucleo-G431KB boards.</p>
+</div>
+<p>If you don’t select a target, the <strong>compilation button is not enabled</strong>. When you select a target, some options of the compilation process are automatically set up.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../_images/keil_target_no.png"><img alt="../_images/keil_target_no.png" src="../_images/keil_target_no.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">No compilation options if no target is selected.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="compile">
+<h3>Compile<a class="headerlink" href="#compile" title="Link to this heading"></a></h3>
+<p>The C++ program is not understandable by the microcontroller. A <strong>compilation step</strong> is necessary to translate your code to native language of the microcontroller: a list of basic instructions.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="../_images/keil_compile.png"><img alt="../_images/keil_compile.png" src="../_images/keil_compile.png" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Compilation button (in blue).</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click on the <strong>build button</strong> (the blue one with a <em>hammer</em>) to compile your code. In the bottom-right side of the interface, the list of the files being compiled is display.</p>
+<p>After a few moment, and if no error occured during the compilation process, you obtain the same type of informations as displayed in the next figure:</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="../_images/keil_compile_output.png"><img alt="../_images/keil_compile_output.png" src="../_images/keil_compile_output.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">End of successful compilation process.</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Depending on the development environment you used, you have two options.</p>
+<section id="id2">
+<h4>Keil Studio Cloud<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<p>A <strong>binary file</strong> is generated and downloaded on your computer (depending on your browser options).</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="../_images/keil_compile_bin_file.png"><img alt="../_images/keil_compile_bin_file.png" src="../_images/keil_compile_bin_file.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Binary file to download.</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h4>MBED Studio<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<p>A binary file is created in …</p>
+</section>
+</section>
+<section id="flash-the-program">
+<h3>Flash the program<a class="headerlink" href="#flash-the-program" title="Link to this heading"></a></h3>
+</section>
 </section>
 <section id="duplicate-a-project">
 <h2>Duplicate a project<a class="headerlink" href="#duplicate-a-project" title="Link to this heading"></a></h2>

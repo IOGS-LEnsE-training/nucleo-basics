@@ -70,6 +70,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#main-steps-to-program-a-microcontroller">Main steps to program a microcontroller</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
@@ -220,6 +221,22 @@
 <p>They are generally simpler in terms of architecture and functionality compared to microprocessors. They are optimized for low-level control tasks and real-time operation.</p>
 </section>
 </section>
+</section>
+<section id="main-steps-to-program-a-microcontroller">
+<h2>Main steps to program a microcontroller<a class="headerlink" href="#main-steps-to-program-a-microcontroller" title="Link to this heading"></a></h2>
+<p>Programming a microcontroller typically involves several steps to ensure that the program works as expected on the target hardware. Here are the main steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Setup Environment</strong>: Make sure you have the necessary development tools installed.</p></li>
+<li><p><strong>Create a Project</strong>: Create a new project with your favorite <abbr title="Integrated Development Environment">IDE</abbr> or import an existing one.</p></li>
+<li><p><strong>Configure Target</strong>: Configure your project to target the specific microcontroller you want to use.</p></li>
+<li><p><strong>Write and Compile Code</strong>: Write or modify your program code to implement the desired functionality. Use APIs and libraries to interact with hardware peripherals and components.</p></li>
+<li><p><strong>Compile Program</strong>: Compile the program to translate your code written in a high-level language into the native language of the microcontroller.</p></li>
+<li><p><strong>Flash Program</strong>: Flash the compiled program onto the microcontroller using the appropriate flashing tool. This may involve using MBED CLI, MBED Studio, or a separate flashing utility.</p></li>
+<li><p><strong>Test Program</strong>: Power on the microcontroller and observe the behavior of the program. Verify that it functions correctly and interacts with hardware peripherals as expected. Test various features and functionalities to ensure they work as intended.</p></li>
+<li><p><strong>Debugging</strong>: If the program does not work as expected, use debugging tools and techniques to identify and fix any issues. This may involve using breakpoints, printf debugging, or outputs.</p></li>
+<li><p><strong>Iterate and Refine</strong>: Make any necessary changes to the program based on testing and debugging results. Re-compile and re-flash the program, and repeat the testing process until the program functions correctly.</p></li>
+<li><p><strong>Documentation and Versioning</strong>: Document the program’s functionality, usage, and any specific instructions for testing. Ensure that you maintain version control for your program code using a version control system like Git.</p></li>
+</ol>
 </section>
 </section>
 

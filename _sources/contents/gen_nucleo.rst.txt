@@ -1,7 +1,10 @@
 Nucleo boards and STM32 MCU
 ###########################
 
-Nucleo boards are a series of **development boards** designed by `STMicroelectronics <https://www.st.com/content/st_com/en.html>`_. They are specifically tailored for **rapid prototyping** and **easy development** of microcontroller-based projects. 
+Rapid prototyping board
+***********************
+
+Nucleo boards are a series of **development boards** designed by `STMicroelectronics <https://www.st.com/content/st_com/en.html>`_. They are specifically tailored for **rapid prototyping** and **easy development** of microcontroller-based projects.
 
 Nucleo boards typically feature an **STM32** microcontroller unit (MCU) as their core component, which belongs to the ARM® Cortex-M® family. 
 
@@ -17,3 +20,29 @@ Nucleo boards are popular among hobbyists, students, and professional developers
 
 
 Nucleo boards serve as a **convenient platform** for learning embedded systems programming, experimenting with various sensors and peripherals, and prototyping IoT (Internet of Things) applications.
+
+
+
+Pinouts of some boards
+######################
+
+.. _nucleo_g431kb_pinouts:
+
+G431KB board - Nucleo-32
+************************
+
+PICTURE OF PINOUT
+
+.. _nucleo_l476rg_pinouts:
+
+L476RG board - Nucleo-64
+************************
+
+PICTURE OF PINOUT
+
+.. _nucleo_f767zi_pinouts:
+
+F767ZI board - Nucleo-144
+*************************
+
+PICTURE OF PINOUT

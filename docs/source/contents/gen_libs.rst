@@ -18,7 +18,7 @@ The **LEnsE** team develops **ressources** (libraries and examples) for Mbed-OS.
 To use these ressources you have to follow these steps:
 
 #. Download all the .h and .cpp files from the library. See `Download files from a GitHub Repository <https://lense.institutoptique.fr/github/#download-files-from-a-github-repository>`_ . (often in the libs directory).
-#. Create a project in Keil Studio based on the version 6 of MBED - Blinky baremetal. See :ref:`Creation of a MBED project <mbed_project>`.
+#. Create a project in Keil Studio Cloud (or MBED Studio) based on the version 6 of MBED - Blinky baremetal. See :ref:`Creation of a MBED project <mbed_project>`.
 #. Create a :file:`libs` directory in your project.
 #. Copy all the downloaded files into this directory.
 #. Download and copy the example contained in the :file:`main_xxx.cpp` file.

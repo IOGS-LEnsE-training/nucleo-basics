@@ -29,7 +29,7 @@ C++ is increasingly being used for microcontroller programming, especially with 
 
 #. **Standard Template Library (STL)**: C++ includes a rich standard library, including containers (like vectors, arrays, and maps), algorithms, and utilities. Although the standard library may not always be suitable for resource-constrained microcontrollers, parts of it can still be utilized depending on the microcontroller's capabilities.
 #. **Portability**: C++ code written for microcontrollers can be highly portable across different platforms, provided that the code doesn't rely on platform-specific features or hardware-dependent optimizations.
-#. **Toolchain Support**: Many modern microcontroller development toolchains, including compilers and IDEs, provide support for C++ development. This includes popular microcontroller families such as ARM Cortex-M series, AVR, PIC, and others.
+#. **Toolchain Support**: Many modern microcontroller development toolchains, including compilers and IDEs, provide support for C++ development. This includes popular microcontroller families such as ARM® Cortex-M® series, AVR, PIC, and others.
 
 .. caution::
 	
@@ -50,6 +50,14 @@ It also provides a comprehensive set of development tools, including a free Inte
 Mbed has a vibrant community of developers, contributors, and partners who contribute libraries, example codes, and resources to the ecosystem. This rich ecosystem makes it easier for developers to find support, collaborate, and leverage existing components for their projects. 
 
 The **LEnsE** team also develops **ressources** (libraries and examples) for Mbed-OS: `MBED6 Libraries <https://iogs-lense-ressources.github.io/mbed6-libraries/>`_.
+
+
+.. warning::
+
+	At the moment **Mbed Studio** supports **only Mbed login** (created on https://os.mbed.com/).
+	
+	**Keil Studio Cloud** supports both Mbed and Arm® accounts
+
 
 .. _keil_studio_cloud:
 
@@ -91,6 +99,10 @@ MBED Studio
 
 A client (or local) version, called **Mbed Studio** and developed by Arm® is also available.
 
+.. warning::
+
+	At the moment **Mbed Studio** supports **only Mbed login** (created on https://os.mbed.com/).
+
 It provides a comprehensive set of tools for developing, compiling, debugging, and deploying firmware for microcontroller-based devices. It offers the same features as Keil Studio Cloud, except that it required to be locally installed on your computer. 
 
 You can download the last version on the Mbed web site: https://os.mbed.com/studio/.
@@ -101,5 +113,5 @@ You can download the last version on the Mbed web site: https://os.mbed.com/stud
 
 	Interface of MBED Studio.
 
-At first use, you must be connected to the Internet and have an Arm® account. But after the first use, no internet connection is required.
+At first use, you must be connected to the Internet and have a Mbed account. But after the first use, no internet connection is required.
 

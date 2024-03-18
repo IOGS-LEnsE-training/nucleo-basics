@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creation of a MBED project &mdash; Nucleo Basics 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Main program structure" href="gen_main_structure.html" />
+    <link rel="prev" title="First project" href="first_project.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Nucleo Basics
+              <img src="../_static/logo-training_git.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Embedded systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">     Microcontrollers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nucleo.html">     Nucleo boards</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="first_project.html">     First project</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">     MBED project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#keil-studio-cloud">Keil Studio Cloud</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#keil-studio-cloud-ide">Keil Studio Cloud IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-your-first-project">Create your first project</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blinky-baremetal-example">Blinky Baremetal Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-compiler-informations">Pre-compiler informations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gen_main_structure.html">     Main program structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen_debugging.html">     Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen_libs.html">     External libraries</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="io.html"> Inputs and Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">     Events and Interrupts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exec_time.html">     Execution time</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">External components</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="leds.html">     LEDs control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">     Motors control</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Next trainings</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://iogs-lense-training.github.io/nucleo-advanced/">Communication / Advanced</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nucleo Basics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="first_project.html">First project</a></li>
+      <li class="breadcrumb-item active">Creation of a MBED project</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/contents/gen_mbed_project.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creation-of-a-mbed-project">
+<h1>Creation of a MBED project<a class="headerlink" href="#creation-of-a-mbed-project" title="Link to this heading"></a></h1>
+<p>If you want to use MBED Studio, see <a class="reference internal" href="#mbed-studio-project"><span class="std std-ref">MBED Studio first project</span></a>.</p>
+<section id="keil-studio-cloud">
+<h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this section, we assume that you have an Arm® account. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
+</div>
+<p>You can access to this platform by following this link: <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>.</p>
+<figure class="align-center">
+<img alt="../_images/keil_website.png" src="../_images/keil_website.png" />
+</figure>
+<p>Then click <span class="menuselection">Keil Studio Cloud</span>, to access to the login page. Log into the <em>Keil Studio Cloud</em> platform with your personal informations.</p>
+<section id="keil-studio-cloud-ide">
+<h3>Keil Studio Cloud IDE<a class="headerlink" href="#keil-studio-cloud-ide" title="Link to this heading"></a></h3>
+<p>You will access to the main window of the <abbr title="Integrated Development Environment">IDE</abbr>.</p>
+<p>This interface is divided in a classical manner with a <strong>project management</strong> area (on the left side of the interface), a <strong>text editor</strong> area (in the top-right part of the interface) and an <strong>output information</strong> area (in the bottom-right part of the interface).</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/keil_mbed_studio_plus.png" src="../_images/keil_mbed_studio_plus.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to :</p>
+<ul class="simple">
+<li><p>your <strong>personal informations</strong> (icons surrounded by an <strong>orange</strong> border);</p></li>
+<li><p>the list of the projects you develop (icon surrounded by a <strong>pink</strong> border).</p></li>
+</ul>
+</section>
+<section id="create-your-first-project">
+<h3>Create your first project<a class="headerlink" href="#create-your-first-project" title="Link to this heading"></a></h3>
+<p>To create a new project, you can click <span class="menuselection">+ New Project</span> (icon surrounded by a <strong>red</strong> border on the previous figure) or click <span class="menuselection">File -&gt; New… -&gt; MBED Project</span>.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/keil_mbed_studio_new_project_mbed.png" src="../_images/keil_mbed_studio_new_project_mbed.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_mbed_blinky.png"><img alt="../_images/keil_mbed_studio_new_project_mbed_blinky.png" src="../_images/keil_mbed_studio_new_project_mbed_blinky.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To avoid any compilation conflicts with other libraries, make sure to select the <strong>baremetal</strong> project version.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+<section id="mbed-studio">
+<span id="mbed-studio-project"></span><h2>MBED Studio<a class="headerlink" href="#mbed-studio" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this section, we assume that you have an Arm® account and that MBED Studio is installed on your computer. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
+</div>
+</section>
+<section id="blinky-baremetal-example">
+<h2>Blinky Baremetal Example<a class="headerlink" href="#blinky-baremetal-example" title="Link to this heading"></a></h2>
+</section>
+<section id="pre-compiler-informations">
+<h2>Pre-compiler informations<a class="headerlink" href="#pre-compiler-informations" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="first_project.html" class="btn btn-neutral float-left" title="First project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gen_main_structure.html" class="btn btn-neutral float-right" title="Main program structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Julien Villemejane.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

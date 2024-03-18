@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>First project with Nucleo / MBED &mdash; Nucleo Basics 0.1 documentation</title>
+  <title>Nucleo boards and STM32 MCU &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Main program structure" href="gen_main_structure.html" />
-    <link rel="prev" title="MBED Compiler and Keil Studio IDE" href="gen_mbed_keil.html" /> 
+    <link rel="next" title="MBED Compiler and Keil Studio IDE" href="gen_mbed_keil.html" />
+    <link rel="prev" title="Nucleo boards from STMicroelectronics" href="nucleo.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,15 +52,8 @@
 <li class="toctree-l1"><a class="reference internal" href="general.html">     Microcontrollers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="nucleo.html">     Nucleo boards</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gen_mbed_keil.html">     MBED Compiler and Keil IDE</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">     First project with Nucleo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#keil-studio-cloud">Keil Studio Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="gen_main_structure.html">     Main program structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen_debugging.html">     Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen_libs.html">     External libraries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">     Nucleo boards and STM32 UC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen_mbed_keil.html">     MBED OS and Keil IDE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nucleo.html#other-ressources">Other ressources</a></li>
 </ul>
 </li>
@@ -97,9 +90,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="nucleo.html">Nucleo boards from STMicroelectronics</a></li>
-      <li class="breadcrumb-item active">First project with Nucleo / MBED</li>
+      <li class="breadcrumb-item active">Nucleo boards and STM32 MCU</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/contents/nucleo_fisrt_project.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/contents/gen_nucleo.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -107,32 +100,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="first-project-with-nucleo-mbed">
-<h1>First project with Nucleo / MBED<a class="headerlink" href="#first-project-with-nucleo-mbed" title="Link to this heading"></a></h1>
-<p>If you want to use MBED Studio, see <a class="reference internal" href="#mbed-studio-project"><span class="std std-ref">MBED Studio first project</span></a>.</p>
-<section id="keil-studio-cloud">
-<h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this section, we assume that you have an Arm® account. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
-</div>
-<p>You can access to this platform by following this link: <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>.</p>
-</section>
-<section id="mbed-studio">
-<span id="mbed-studio-project"></span><h2>MBED Studio<a class="headerlink" href="#mbed-studio" title="Link to this heading"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this section, we assume that you have an Arm® account and that MBED Studio is installed on your computer. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
-</div>
-</section>
+  <section id="nucleo-boards-and-stm32-mcu">
+<h1>Nucleo boards and STM32 MCU<a class="headerlink" href="#nucleo-boards-and-stm32-mcu" title="Link to this heading"></a></h1>
+<p>Nucleo boards are a series of <strong>development boards</strong> designed by <a class="reference external" href="https://www.st.com/content/st_com/en.html">STMicroelectronics</a>. They are specifically tailored for <strong>rapid prototyping</strong> and <strong>easy development</strong> of microcontroller-based projects.</p>
+<p>Nucleo boards typically feature an <strong>STM32</strong> microcontroller unit (MCU) as their core component, which belongs to the ARM® Cortex-M® family.</p>
+<p>IMAGE NUCLEO BOARD</p>
+<p>These boards offer a variety of features such as on-board debugging and programming interfaces, multiple <abbr>GPIO (General Purpose Input/Output</abbr> pins, integrated sensors, connectivity options, as well as expansion headers for <strong>connecting additional hardware modules</strong>.</p>
+<p>Nucleo boards are popular among hobbyists, students, and professional developers due to their affordability, versatility, and ease of use. Different <strong>integrated development environment (IDE)</strong> support could be used to develop program for <strong>STM32</strong> MCU:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.st.com/en/ecosystems/stm32cube.html">STM32CubeMX / STM32CubeIDE</a></p></li>
+<li><p>Keil µVision</p></li>
+<li><p><a class="reference external" href="https://os.mbed.com/studio/">MBED Studio</a> / <a class="reference external" href="https://www.keil.arm.com/">Keil Studio Cloud</a></p></li>
+</ul>
+<p>Nucleo boards serve as a <strong>convenient platform</strong> for learning embedded systems programming, experimenting with various sensors and peripherals, and prototyping IoT (Internet of Things) applications.</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gen_mbed_keil.html" class="btn btn-neutral float-left" title="MBED Compiler and Keil Studio IDE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gen_main_structure.html" class="btn btn-neutral float-right" title="Main program structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="nucleo.html" class="btn btn-neutral float-left" title="Nucleo boards from STMicroelectronics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gen_mbed_keil.html" class="btn btn-neutral float-right" title="MBED Compiler and Keil Studio IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

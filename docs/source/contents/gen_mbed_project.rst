@@ -1,3 +1,5 @@
+.. _mbed_project:
+
 Creation of a MBED project
 ##########################
 
@@ -105,6 +107,13 @@ This interface is divided in a classical manner with a **project management** ar
 
 During your first access, no projects appear in the **project management** part. In this section, you can access to the list of the projects you develop (icon surrounded by a **pink** border).
 
+Define your workspace
+=====================
+
+Before creating your first project, you need to specify where you want to store your projects.
+
+Click :menuselection:`File -> Open Workspace...`. Then select the directory where you want to store your projects.
+
 Create your first project
 =========================
 
@@ -157,9 +166,101 @@ Now it's time to test your first application.
 
 .. _mbed_blinky:
 
-Blinky Baremetal Example
-************************
+Compile and test
+****************
 
+MBED-OS primarily uses **C++** as the programming language for developing applications and firmware. 
+
+.. note::
+	
+	If you are not familiar with the **C++ language**, tutorials are available at the following address: `C++ - Basics and Object-Oriented Programming  <https://iogs-lense-training.github.io/cpp-basics-oop/>`_.
+
+.. note::
+
+	Most of the following steps are the same in *Keil Studio Cloud* and *MBED Studio*. Otherwise, a note will specify the differences.
+
+Main file
+=========
+
+On the left side of the interface, click on your project (here :menuselection:`01_First_Project` to display its contents.
+
+.. figure:: ../_static/images/keil/keil_main.png
+	:align: center
+	
+	First project contents.
+	
+Projects basically contain about ten files and directories. They are useful at various stages of the project realization.
+
+But the **most essential** is the :file:`main.cpp` file. It contains the :code:`main()` function that serves as the entry point of the program. 
+
+Click :menuselection:`main.cpp` file to open it on the top-right side of the interface.
+
+*We will see later its content.*
+
+Select a target
+===============
+
+Although the MBED-OS operating system is designed for a wide range of microcontrollers from the STM32 family, it is necessary to **specify** to the compiler for which **target** the program is being developed.
+
+.. figure:: ../_static/images/keil/keil_target_select.png
+	:align: center
+	:width: 60%
+	
+	Target selection.
+
+.. note::
+
+	At LEnsE, we mainly use Nucleo-L476RG and Nucleo-G431KB boards.
+
+If you don't select a target, the **compilation button is not enabled**. When you select a target, some options of the compilation process are automatically set up.
+
+.. figure:: ../_static/images/keil/keil_target_no.png
+	:align: center
+	:width: 60%
+	
+	No compilation options if no target is selected.
+
+Compile
+=======
+
+The C++ program is not understandable by the microcontroller. A **compilation step** is necessary to translate your code to native language of the microcontroller: a list of basic instructions.
+
+.. figure:: ../_static/images/keil/keil_compile.png
+	:align: center
+	:width: 30%
+	
+	Compilation button (in blue).
+
+Click on the **build button** (the blue one with a *hammer*) to compile your code. In the bottom-right side of the interface, the list of the files being compiled is display.
+
+After a few moment, and if no error occured during the compilation process, you obtain the same type of informations as displayed in the next figure:
+
+.. figure:: ../_static/images/keil/keil_compile_output.png
+	:align: center
+	:width: 70%
+	
+	End of successful compilation process.
+
+Depending on the development environment you used, you have two options.
+
+Keil Studio Cloud
+-----------------
+
+A **binary file** is generated and downloaded on your computer (depending on your browser options).
+
+.. figure:: ../_static/images/keil/keil_compile_bin_file.png
+	:align: center
+	:width: 40%
+
+	Binary file to download.
+
+MBED Studio
+-----------
+
+A binary file is created in ...
+
+Flash the program
+=================
 
 
 

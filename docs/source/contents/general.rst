@@ -126,3 +126,21 @@ Purpose and complexity
 Microcontrollers are typically **used in embedded systems** where space, power consumption, and cost are **critical factors**. They are designed for **specific tasks** and are often programmed to control devices or perform dedicated functions. 
 
 They are generally simpler in terms of architecture and functionality compared to microprocessors. They are optimized for low-level control tasks and real-time operation. 
+
+
+Main steps to program a microcontroller
+***************************************
+
+Programming a microcontroller typically involves several steps to ensure that the program works as expected on the target hardware. Here are the main steps:
+
+#. **Setup Environment**: Make sure you have the necessary development tools installed.
+#. **Create a Project**: Create a new project with your favorite :abbr:`IDE (Integrated Development Environment)` or import an existing one.
+#. **Configure Target**: Configure your project to target the specific microcontroller you want to use.
+#. **Write and Compile Code**: Write or modify your program code to implement the desired functionality. Use APIs and libraries to interact with hardware peripherals and components.
+#. **Compile Program**: Compile the program to translate your code written in a high-level language into the native language of the microcontroller.
+#. **Flash Program**: Flash the compiled program onto the microcontroller using the appropriate flashing tool. This may involve using MBED CLI, MBED Studio, or a separate flashing utility.
+#. **Test Program**: Power on the microcontroller and observe the behavior of the program. Verify that it functions correctly and interacts with hardware peripherals as expected. Test various features and functionalities to ensure they work as intended.
+#. **Debugging**: If the program does not work as expected, use debugging tools and techniques to identify and fix any issues. This may involve using breakpoints, printf debugging, or outputs.
+#. **Iterate and Refine**: Make any necessary changes to the program based on testing and debugging results. Re-compile and re-flash the program, and repeat the testing process until the program functions correctly.
+#. **Documentation and Versioning**: Document the program's functionality, usage, and any specific instructions for testing. Ensure that you maintain version control for your program code using a version control system like Git.
+

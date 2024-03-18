@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MBED Compiler and Keil Studio IDE" href="gen_mbed_keil.html" />
+    <link rel="next" title="MBED OS and Keil Studio IDE" href="gen_mbed_keil.html" />
     <link rel="prev" title="Nucleo boards from STMicroelectronics" href="nucleo.html" /> 
 </head>
 
@@ -53,12 +53,16 @@
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="nucleo.html">     Nucleo boards</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Nucleo boards and STM32 MCU</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rapid-prototyping-board">Rapid prototyping board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rapid-prototyping-boards">Rapid prototyping boards</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#pinouts-of-some-boards">Pinouts of some boards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pins-and-their-functions">Pins and their functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#g431kb-board-nucleo-32">G431KB board - Nucleo-32</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#l476rg-board-nucleo-64">L476RG board - Nucleo-64</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l476rg-board-nucleo-64">L476RG board - Nucleo-64</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#morpho-connectors">Morpho connectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arduino-connectors">Arduino connectors</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#f767zi-board-nucleo-144">F767ZI board - Nucleo-144</a></li>
 </ul>
 </li>
@@ -111,12 +115,18 @@
              
   <section id="nucleo-boards-and-stm32-mcu">
 <h1>Nucleo boards and STM32 MCU<a class="headerlink" href="#nucleo-boards-and-stm32-mcu" title="Link to this heading"></a></h1>
-<section id="rapid-prototyping-board">
-<h2>Rapid prototyping board<a class="headerlink" href="#rapid-prototyping-board" title="Link to this heading"></a></h2>
+<section id="rapid-prototyping-boards">
+<h2>Rapid prototyping boards<a class="headerlink" href="#rapid-prototyping-boards" title="Link to this heading"></a></h2>
 <p>Nucleo boards are a series of <strong>development boards</strong> designed by <a class="reference external" href="https://www.st.com/content/st_com/en.html">STMicroelectronics</a>. They are specifically tailored for <strong>rapid prototyping</strong> and <strong>easy development</strong> of microcontroller-based projects.</p>
 <p>Nucleo boards typically feature an <strong>STM32</strong> microcontroller unit (MCU) as their core component, which belongs to the ARM® Cortex-M® family.</p>
-<p>IMAGE NUCLEO BOARD</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/nucleo_boards.png"><img alt="../_images/nucleo_boards.png" src="../_images/nucleo_boards.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Nucleo-G431KB (left) and Nucleo-L476RG (right) boards.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>These boards offer a variety of features such as on-board debugging and programming interfaces, multiple <abbr>GPIO (General Purpose Input/Output</abbr> pins, integrated sensors, connectivity options, as well as expansion headers for <strong>connecting additional hardware modules</strong>.</p>
+<p>There are different formats of Nucleo boards: in the previous figure, you can see a small-size Nucleo-32 board on the left (i.e. 32 available pins) and a middle-size Nucleo-64 on the right (i.e. 64 available pins).</p>
 <p>Nucleo boards are popular among hobbyists, students, and professional developers due to their affordability, versatility, and ease of use. Different <strong>integrated development environment (IDE)</strong> support could be used to develop program for <strong>STM32</strong> MCU:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.st.com/en/ecosystems/stm32cube.html">STM32CubeMX / STM32CubeIDE</a></p></li>
@@ -126,15 +136,65 @@
 <p>Nucleo boards serve as a <strong>convenient platform</strong> for learning embedded systems programming, experimenting with various sensors and peripherals, and prototyping IoT (Internet of Things) applications.</p>
 </section>
 </section>
-<section id="pinouts-of-some-boards">
-<h1>Pinouts of some boards<a class="headerlink" href="#pinouts-of-some-boards" title="Link to this heading"></a></h1>
+<section id="pins-and-their-functions">
+<h1>Pins and their functions<a class="headerlink" href="#pins-and-their-functions" title="Link to this heading"></a></h1>
+<p>Each pin of the boards can have multiple functions. But only one can be used at a time.</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/nucleo_pin_functions.png" src="../_images/nucleo_pin_functions.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Example of a Nucleo pin.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the previous example, the <strong>PA_7</strong> pin (name given by <em>STMicroelectronics</em>) can be used as:</p>
+<ul class="simple">
+<li><p>a <strong>digital input or output</strong> (true for lot of pins of STM32 microcontrollers)</p></li>
+<li><p>an <strong>analog input</strong>, linked to an <abbr title="Analog-to-Digital Converter">ADC</abbr> , as indicated by the <span class="menuselection">AnalogIn</span> tag</p></li>
+<li><p>a <strong>pulsed-width modulated output</strong>, as indicated by the <span class="menuselection">PWM</span> tag</p></li>
+<li><p>another specialized function pin (<abbr title="Master Out Slave In">MOSI</abbr> pin of a <abbr title="Serial Peripheral Interface">SPI</abbr> communication in this case)</p></li>
+</ul>
+<p>Other options are possible, such as:</p>
+<ul class="simple">
+<li><p><strong>analog output</strong>, linked to a <abbr title="Digital-to-Analog Converter">DAC</abbr> , indicated by an <span class="menuselection">AnalogOut</span> tag</p></li>
+<li><p><abbr title="Universal Asynchronous Receiver/Transmitter">UART</abbr> or <abbr title="Universal Synchronous/Asynchronous Receiver/Transmitter">USART</abbr> communication pins, indicated by a <span class="menuselection">Serial</span> tag</p></li>
+<li><p><abbr title="Inter-Integrated Circuit">I2C</abbr> communication pins, indicated by an <span class="menuselection">I2C</span> tag</p></li>
+<li><p><abbr title="Serial Peripheral Interface">SPI</abbr> communication pins, indicated by a <span class="menuselection">SPI</span> tag</p></li>
+</ul>
+<p>Pin indicated with a <span class="menuselection">GND</span> tag correspond to the ground voltage, i.e. the 0V reference voltage of the board.</p>
+<p>Some other pins are not directly linked to the microcontroller, but give access to regulated power supply: such as <strong>3.3V</strong> or <strong>5V</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Regulated voltage outputs are current-limited. See the documentation of the Nucleo board you are using.</p>
+</div>
+<p>A power supply input can be used to power the board. It is tagged as <span class="menuselection">Vin</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The input <strong>Vin</strong> voltage must be between 7 and 12 volts.</p>
+</div>
 <section id="g431kb-board-nucleo-32">
 <span id="nucleo-g431kb-pinouts"></span><h2>G431KB board - Nucleo-32<a class="headerlink" href="#g431kb-board-nucleo-32" title="Link to this heading"></a></h2>
 <p>PICTURE OF PINOUT</p>
 </section>
 <section id="l476rg-board-nucleo-64">
 <span id="nucleo-l476rg-pinouts"></span><h2>L476RG board - Nucleo-64<a class="headerlink" href="#l476rg-board-nucleo-64" title="Link to this heading"></a></h2>
-<p>PICTURE OF PINOUT</p>
+<p>Download <a class="reference download internal" download="" href="../_downloads/ec04322eb63a11f0df9d5692c573631a/Nucleo-64_L476RG.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Nucleo-64_L476RG</span></code></a></p>
+<section id="morpho-connectors">
+<h3>Morpho connectors<a class="headerlink" href="#morpho-connectors" title="Link to this heading"></a></h3>
+<figure class="align-center">
+<img alt="../_images/l476rg_CN7.png" src="../_images/l476rg_CN7.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/l476rg_CN10.png" src="../_images/l476rg_CN10.png" />
+</figure>
+</section>
+<section id="arduino-connectors">
+<h3>Arduino connectors<a class="headerlink" href="#arduino-connectors" title="Link to this heading"></a></h3>
+<figure class="align-center">
+<img alt="../_images/l476rg_CN8.png" src="../_images/l476rg_CN8.png" />
+</figure>
+<figure class="align-center">
+<img alt="../_images/l476rg_CN5.png" src="../_images/l476rg_CN5.png" />
+</figure>
+</section>
 </section>
 <section id="f767zi-board-nucleo-144">
 <span id="nucleo-f767zi-pinouts"></span><h2>F767ZI board - Nucleo-144<a class="headerlink" href="#f767zi-board-nucleo-144" title="Link to this heading"></a></h2>
@@ -147,7 +207,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="nucleo.html" class="btn btn-neutral float-left" title="Nucleo boards from STMicroelectronics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="gen_mbed_keil.html" class="btn btn-neutral float-right" title="MBED Compiler and Keil Studio IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gen_mbed_keil.html" class="btn btn-neutral float-right" title="MBED OS and Keil Studio IDE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

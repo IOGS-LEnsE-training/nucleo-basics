@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MBED Compiler and Keil Studio IDE &mdash; Nucleo Basics 0.1 documentation</title>
+  <title>MBED OS and Keil Studio IDE &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
@@ -53,7 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="polling_interrupts_rtos.html">     Polling vs Interrupts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="nucleo.html">     Nucleo boards</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gen_nucleo.html">Nucleo boards and STM32 MCU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gen_nucleo.html#pinouts-of-some-boards">Pinouts of some boards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gen_nucleo.html#pins-and-their-functions">Pins and their functions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">     MBED OS and Keil IDE</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#programming-languages-for-microcontrollers">Programming languages for microcontrollers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#assembly-language">Assembly language</a></li>
@@ -101,7 +101,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="nucleo.html">Nucleo boards from STMicroelectronics</a></li>
-      <li class="breadcrumb-item active">MBED Compiler and Keil Studio IDE</li>
+      <li class="breadcrumb-item active">MBED OS and Keil Studio IDE</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/contents/gen_mbed_keil.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -111,8 +111,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mbed-compiler-and-keil-studio-ide">
-<h1>MBED Compiler and Keil Studio IDE<a class="headerlink" href="#mbed-compiler-and-keil-studio-ide" title="Link to this heading"></a></h1>
+  <section id="mbed-os-and-keil-studio-ide">
+<h1>MBED OS and Keil Studio IDE<a class="headerlink" href="#mbed-os-and-keil-studio-ide" title="Link to this heading"></a></h1>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/mbed-os_logo.png"><img alt="../_images/mbed-os_logo.png" src="../_images/mbed-os_logo.png" style="width: 600.0px; height: 150.0px;" /></a>
+</figure>
 <section id="programming-languages-for-microcontrollers">
 <h2>Programming languages for microcontrollers<a class="headerlink" href="#programming-languages-for-microcontrollers" title="Link to this heading"></a></h2>
 <p>Microcontrollers (UCs) typically have <strong>specific constraints and architectures</strong> that developers must consider when designing software for them:</p>
@@ -147,7 +150,10 @@
 <h2>MBED free open source IoT operating system<a class="headerlink" href="#mbed-free-open-source-iot-operating-system" title="Link to this heading"></a></h2>
 <p>Mbed is an <strong>open-source embedded operating system</strong> designed by Arm®, a leading semiconductor and software design company, for microcontroller-based applications. It provides a platform and ecosystem for rapid prototyping, development, and deployment of embedded systems.</p>
 <p>It includes <strong>Mbed OS</strong>, a lightweight, <strong>open-source operating system</strong> specifically designed for microcontrollers. It abstracts away low-level hardware details and provides a consistent API for accessing peripherals.</p>
-<p>It also provides a comprehensive set of development tools, including a free Integrated Development Environment (IDE) called the <strong>Mbed Studio</strong>.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/mbed-os_logo.png"><img alt="../_images/mbed-os_logo.png" src="../_images/mbed-os_logo.png" style="width: 240.0px; height: 60.0px;" /></a>
+</figure>
+<p>It also provides a comprehensive set of development tools, including two free Integrated Development Environments (IDE) called <strong>Mbed Studio</strong> (from mbed.com) and <strong>Keil Studio Cloud</strong> (from arm.com).</p>
 <p>Mbed has a vibrant community of developers, contributors, and partners who contribute libraries, example codes, and resources to the ecosystem. This rich ecosystem makes it easier for developers to find support, collaborate, and leverage existing components for their projects.</p>
 <p>The <strong>LEnsE</strong> team also develops <strong>ressources</strong> (libraries and examples) for Mbed-OS: <a class="reference external" href="https://iogs-lense-ressources.github.io/mbed6-libraries/">MBED6 Libraries</a>.</p>
 <div class="admonition warning">
@@ -177,7 +183,7 @@
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/keil_cloud.png"><img alt="../_images/keil_cloud.png" src="../_images/keil_cloud.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Interface of Keil Studio Cloud.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Interface of Keil Studio Cloud.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -193,7 +199,7 @@
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio.png"><img alt="../_images/keil_mbed_studio.png" src="../_images/keil_mbed_studio.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Interface of MBED Studio.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Interface of MBED Studio.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>At first use, you must be connected to the Internet and have a Mbed account. But after the first use, no internet connection is required.</p>

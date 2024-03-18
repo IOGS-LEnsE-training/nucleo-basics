@@ -73,7 +73,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#duplicate-a-project">Duplicate a project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pre-compiler-informations">Pre-compiler informations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pre-compiler-informations">Pre-compiler informations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#baremetal-option">Baremetal option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sd-card-fat-filesystem-options">SD card, FAT filesystem options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cmsis-dsp-library">CMSIS-DSP library</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="gen_main_structure.html">     Main program structure</a></li>
@@ -144,7 +149,7 @@
 <figure class="align-center" id="id4">
 <img alt="../_images/keil_cloud_plus.png" src="../_images/keil_cloud_plus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to :</p>
@@ -159,14 +164,14 @@
 <figure class="align-center" id="id5">
 <img alt="../_images/keil_cloud_new_project_mbed.png" src="../_images/keil_cloud_new_project_mbed.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/keil_cloud_new_project_mbed_blinky.png"><img alt="../_images/keil_cloud_new_project_mbed_blinky.png" src="../_images/keil_cloud_new_project_mbed_blinky.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -186,7 +191,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Now it’s time to test your first application, go to the <a class="reference internal" href="#mbed-blinky"><span class="std std-ref">Blinky example explanations</span></a> .</p>
+<p>Now it’s time to test your first application, go to the <a class="reference internal" href="#mbed-blinky"><span class="std std-ref">Compile and test</span></a> section.</p>
 </section>
 </section>
 <section id="mbed-studio">
@@ -203,7 +208,7 @@
 <figure class="align-center" id="id7">
 <img alt="../_images/keil_mbed_studio_plus.png" src="../_images/keil_mbed_studio_plus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Main window of the MBED Studio software.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Main window of the MBED Studio software.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to the list of the projects you develop (icon surrounded by a <strong>pink</strong> border).</p>
@@ -219,14 +224,14 @@
 <figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_program.png"><img alt="../_images/keil_mbed_studio_new_program.png" src="../_images/keil_mbed_studio_new_program.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><span class="menuselection">File -&gt; New Program</span> in MBED Studio.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text"><span class="menuselection">File -&gt; New Program</span> in MBED Studio.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
 <figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_mbed_blinky.png"><img alt="../_images/keil_mbed_studio_new_project_mbed_blinky.png" src="../_images/keil_mbed_studio_new_project_mbed_blinky.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -237,7 +242,7 @@
 <figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_add.png"><img alt="../_images/keil_mbed_studio_new_project_add.png" src="../_images/keil_mbed_studio_new_project_add.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Add a new project in MBED Studio.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Add a new project in MBED Studio.</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
@@ -275,7 +280,7 @@
 <figure class="align-center" id="id11">
 <img alt="../_images/keil_main.png" src="../_images/keil_main.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">First project contents.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">First project contents.</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Projects basically contain about ten files and directories. They are useful at various stages of the project realization.</p>
@@ -289,7 +294,7 @@
 <figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../_images/keil_target_select.png"><img alt="../_images/keil_target_select.png" src="../_images/keil_target_select.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Target selection.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Target selection.</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -300,7 +305,7 @@
 <figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="../_images/keil_target_no.png"><img alt="../_images/keil_target_no.png" src="../_images/keil_target_no.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">No compilation options if no target is selected.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">No compilation options if no target is selected.</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -310,15 +315,19 @@
 <figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="../_images/keil_compile.png"><img alt="../_images/keil_compile.png" src="../_images/keil_compile.png" style="width: 30%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Compilation button (in blue).</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Compilation button (in blue).</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Click on the <strong>build button</strong> (the blue one with a <em>hammer</em>) to compile your code. In the bottom-right side of the interface, the list of the files being compiled is display.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the MBED Studio version, you can choose the <em>Build profile</em>. In <em>Debug</em> mode, you have access to inline debugging tools but it tooks more spaces in the memory contrary to the <em>Release</em> mode.</p>
+</div>
 <p>After a few moment, and if no error occured during the compilation process, you obtain the same type of informations as displayed in the next figure:</p>
 <figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="../_images/keil_compile_output.png"><img alt="../_images/keil_compile_output.png" src="../_images/keil_compile_output.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">End of successful compilation process.</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">End of successful compilation process.</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Depending on the development environment you used, you have two options.</p>
@@ -328,24 +337,107 @@
 <figure class="align-center" id="id16">
 <a class="reference internal image-reference" href="../_images/keil_compile_bin_file.png"><img alt="../_images/keil_compile_bin_file.png" src="../_images/keil_compile_bin_file.png" style="width: 40%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Binary file to download.</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Binary file to download.</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id3">
 <h4>MBED Studio<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
-<p>A binary file is created in …</p>
+<p>A binary file is created in a sub-directory of your project directory. Depending on the target you specified, the binary file is stored in the <code class="file docutils literal notranslate"><span class="pre">project_dir\BUILD\NUCLEO_target\ARM6\</span></code> directory, where <em>target</em> is the name of the target (for example: G431KB) and <em>project_dir</em> the name of the directory where you stored your project.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/keil_compile_file_dir.png"><img alt="../_images/keil_compile_file_dir.png" src="../_images/keil_compile_file_dir.png" style="width: 80%;" /></a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 </section>
 <section id="flash-the-program">
 <h3>Flash the program<a class="headerlink" href="#flash-the-program" title="Link to this heading"></a></h3>
+<p>The final step, before enjoying to play with your new system, is to <strong>flash the binary file into the microcontroller</strong>. <em>STMicroelectronics</em>, through the design of their Nucleo boards, facilitates the code uploading step into the microcontroller.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that your board is connected to your computer via a USB cable.</p>
+</div>
+<p>The Nucleo boards are recognized on computers as <strong>USB storage devices</strong>. But you can only store binary files as the previously generated by MBED compiler.</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="../_images/nucleo_usb_device.png"><img alt="../_images/nucleo_usb_device.png" src="../_images/nucleo_usb_device.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">G431KB Nucleo boards recognized as a USB storage device.</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>You just have to <strong>copy and paste</strong> the binary file (bin extension) from your computer to the Nucleo device. After few seconds, the Nucleo device flashes the internal memory of the onboard-microcontroller.</p>
+<p>During the transfer of the file, the <strong>LD1</strong> (or <strong>COM</strong>) led is blinking in red and green. At the end of the transfer, this led stops blinking.</p>
 </section>
 </section>
 <section id="duplicate-a-project">
 <h2>Duplicate a project<a class="headerlink" href="#duplicate-a-project" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to <strong>create a new project</strong> each time you develop a new application.</p>
+</div>
+<p>Instead of entirely creating a new project each time, you can also <strong>duplicate an existing project</strong>.</p>
+<p>Right-click on the project you want to duplicate and click <span class="menuselection">Duplicate</span> .</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/keil_duplicate.png"><img alt="../_images/keil_duplicate.png" src="../_images/keil_duplicate.png" style="width: 70%;" /></a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>A second project with the same name following by the term <em>copy</em> is generated.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/keil_duplicate_project.png"><img alt="../_images/keil_duplicate_project.png" src="../_images/keil_duplicate_project.png" style="width: 273.59999999999997px; height: 48.0px;" /></a>
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You can <strong>change its name</strong> by right-click on the new project and then click <span class="menuselection">Rename</span> .</p>
+<p>You can also <strong>set this new project as the active one</strong> by right-click on the project and then click <span class="menuselection">Set Active Project</span> .</p>
 </section>
 <section id="pre-compiler-informations">
 <h2>Pre-compiler informations<a class="headerlink" href="#pre-compiler-informations" title="Link to this heading"></a></h2>
+<p>A specific file, called <code class="file docutils literal notranslate"><span class="pre">mbed_app.json</span></code> , allows developers to specify configuration options and parameters for their Mbed applications.</p>
+<p>This JSON file is typically used to configure various aspects of the application, such as: target configuration, feature configuration, peripheral configuration or library configuration.</p>
+<section id="baremetal-option">
+<h3>Baremetal option<a class="headerlink" href="#baremetal-option" title="Link to this heading"></a></h3>
+<p><strong>Baremetal</strong> refers to programming directly on hardware without the use of an operating system. In baremetal programming, developers have direct control over the hardware resources and can write code that interacts directly with the hardware peripherals and registers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requires&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;bare-metal&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;target_overrides&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;*&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;target.printf_lib&quot;</span><span class="p">:</span> <span class="s2">&quot;minimal-printf&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;platform.minimal-printf-enable-floating-point&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+                <span class="s2">&quot;platform.stdio-baud-rate&quot;</span><span class="p">:</span> <span class="mi">115200</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the <strong>baremetal</strong> modules are required.</p>
+<p>The other options, specified in the target_overrides part, allow the use of the <code class="code docutils literal notranslate"><span class="pre">printf()</span></code> function (linked to the virtual serial port of the USB connection) and set the baudrate of the transmission to 115200 bauds.</p>
+</section>
+<section id="sd-card-fat-filesystem-options">
+<h3>SD card, FAT filesystem options<a class="headerlink" href="#sd-card-fat-filesystem-options" title="Link to this heading"></a></h3>
+<p>If you want to use a <strong>SD card</strong> and a <strong>FAT filesystem</strong>, other options are required. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requires&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;bare-metal&quot;</span><span class="p">,</span> <span class="s2">&quot;rtos-api&quot;</span><span class="p">,</span> <span class="s2">&quot;sd&quot;</span><span class="p">,</span><span class="s2">&quot;filesystem&quot;</span><span class="p">,</span><span class="s2">&quot;fat_chan&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;target_overrides&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;*&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;target.components_add&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;SD&quot;</span> <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="cmsis-dsp-library">
+<h3>CMSIS-DSP library<a class="headerlink" href="#cmsis-dsp-library" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;requires&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;bare-metal&quot;</span><span class="p">,</span><span class="s2">&quot;cmsis-dsp&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

@@ -59,8 +59,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#create-your-first-project">Create your first project</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mbed-studio">MBED Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mbed-studio-ide">MBED Studio IDE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Create your first project</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#blinky-baremetal-example">Blinky Baremetal Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duplicate-a-project">Duplicate a project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pre-compiler-informations">Pre-compiler informations</a></li>
 </ul>
 </li>
@@ -118,7 +123,7 @@
 <h2>Keil Studio Cloud<a class="headerlink" href="#keil-studio-cloud" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this section, we assume that you have an Arm® account. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
+<p>In this section, we assume that you have a MBED account or an Arm® account. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
 </div>
 <p>You can access to this platform by following this link: <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a>.</p>
 <figure class="align-center">
@@ -129,10 +134,10 @@
 <h3>Keil Studio Cloud IDE<a class="headerlink" href="#keil-studio-cloud-ide" title="Link to this heading"></a></h3>
 <p>You will access to the main window of the <abbr title="Integrated Development Environment">IDE</abbr>.</p>
 <p>This interface is divided in a classical manner with a <strong>project management</strong> area (on the left side of the interface), a <strong>text editor</strong> area (in the top-right part of the interface) and an <strong>output information</strong> area (in the bottom-right part of the interface).</p>
-<figure class="align-center" id="id1">
-<img alt="../_images/keil_mbed_studio_plus.png" src="../_images/keil_mbed_studio_plus.png" />
+<figure class="align-center" id="id2">
+<img alt="../_images/keil_cloud_plus.png" src="../_images/keil_cloud_plus.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Main window of the Keil Studio Cloud platform. <a class="reference external" href="https://www.keil.arm.com/">https://www.keil.arm.com/</a></span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to :</p>
@@ -144,37 +149,108 @@
 <section id="create-your-first-project">
 <h3>Create your first project<a class="headerlink" href="#create-your-first-project" title="Link to this heading"></a></h3>
 <p>To create a new project, you can click <span class="menuselection">+ New Project</span> (icon surrounded by a <strong>red</strong> border on the previous figure) or click <span class="menuselection">File -&gt; New… -&gt; MBED Project</span>.</p>
-<figure class="align-center" id="id2">
-<img alt="../_images/keil_mbed_studio_new_project_mbed.png" src="../_images/keil_mbed_studio_new_project_mbed.png" />
+<figure class="align-center" id="id3">
+<img alt="../_images/keil_cloud_new_project_mbed.png" src="../_images/keil_cloud_new_project_mbed.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text"><span class="menuselection">File -&gt; New… -&gt; MBED Project</span> in Keil Studio Cloud.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_mbed_blinky.png"><img alt="../_images/keil_mbed_studio_new_project_mbed_blinky.png" src="../_images/keil_mbed_studio_new_project_mbed_blinky.png" style="width: 70%;" /></a>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/keil_cloud_new_project_mbed_blinky.png"><img alt="../_images/keil_cloud_new_project_mbed_blinky.png" src="../_images/keil_cloud_new_project_mbed_blinky.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>To avoid any compilation conflicts with other libraries, make sure to select the <strong>baremetal</strong> project version.</p>
+<p>To avoid any compilation conflicts with other libraries, make sure to select the <strong>baremetal</strong> project in the <strong>MBED 6</strong> version of <em>MBED-OS</em>.</p>
 </div>
+<p>When the type of project is selected, you can change the <strong>project name</strong>. Give a specific name corresponding to the content of the project.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/keil_cloud_new_project_add.png"><img alt="../_images/keil_cloud_new_project_add.png" src="../_images/keil_cloud_new_project_add.png" style="width: 70%;" /></a>
+</figure>
+<p>You can uncheck the <span class="menuselection">Initialize this project as a Git repository</span> option if you are not using Git with your project.</p>
+<p>Click <span class="menuselection">Add project</span>. Your first project is created.</p>
+<figure class="align-center">
+<img alt="../_images/keil_cloud_first_project.png" src="../_images/keil_cloud_first_project.png" />
+</figure>
+<p>You can check in the <span class="menuselection">Libraries Manager</span> tab (in the bottom-right part of the interface) the version of MBED that it is used (in this example: MBED version 6.13).</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p>Now it’s time to test your first application, go to the <a class="reference internal" href="#mbed-blinky"><span class="std std-ref">Blinky example explanations</span></a> .</p>
 </section>
 </section>
 <section id="mbed-studio">
 <span id="mbed-studio-project"></span><h2>MBED Studio<a class="headerlink" href="#mbed-studio" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this section, we assume that you have an Arm® account and that MBED Studio is installed on your computer. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
+<p>In this section, we assume that you have a MBED account and that MBED Studio is installed on your computer. See <a class="reference internal" href="gen_mbed_keil.html#keil-studio-cloud"><span class="std std-ref">Keil Studio Cloud account</span></a>.</p>
 </div>
+<p>Start <span class="menuselection">MBED Studio</span>.</p>
+<section id="mbed-studio-ide">
+<h3>MBED Studio IDE<a class="headerlink" href="#mbed-studio-ide" title="Link to this heading"></a></h3>
+<p>You will access to the main window of the <abbr title="Integrated Development Environment">IDE</abbr>.</p>
+<p>This interface is divided in a classical manner with a <strong>project management</strong> area (on the left side of the interface), a <strong>text editor</strong> area (in the top-right part of the interface) and an <strong>output information</strong> area (in the bottom-right part of the interface).</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/keil_mbed_studio_plus.png" src="../_images/keil_mbed_studio_plus.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Main window of the MBED Studio software.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>During your first access, no projects appear in the <strong>project management</strong> part. In this section, you can access to the list of the projects you develop (icon surrounded by a <strong>pink</strong> border).</p>
+</section>
+<section id="id1">
+<h3>Create your first project<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>To create a new project, you can click <span class="menuselection">+ New Project</span> (icon surrounded by a <strong>red</strong> border on the previous figure) or click <span class="menuselection">File -&gt; New Program</span>.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_program.png"><img alt="../_images/keil_mbed_studio_new_program.png" src="../_images/keil_mbed_studio_new_program.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><span class="menuselection">File -&gt; New Program</span> in MBED Studio.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then select <span class="menuselection">MBED6 -&gt; mbed-os-example-blinky-baremetal</span>.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_mbed_blinky.png"><img alt="../_images/keil_mbed_studio_new_project_mbed_blinky.png" src="../_images/keil_mbed_studio_new_project_mbed_blinky.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">New project selection.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To avoid any compilation conflicts with other libraries, make sure to select the <strong>baremetal</strong> project in the <strong>MBED 6</strong> version of <em>MBED-OS</em>.</p>
+</div>
+<p>When the type of project is selected, you can change the <strong>project name</strong>. Give a specific name corresponding to the content of the project.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/keil_mbed_studio_new_project_add.png"><img alt="../_images/keil_mbed_studio_new_project_add.png" src="../_images/keil_mbed_studio_new_project_add.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Add a new project in MBED Studio.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the <strong>MBED OS Location</strong> section, make sure to select the <strong>Link to an existing shared Mbed OS instance</strong> option, and select the directory where an instance of the last MBED-OS is installed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the LEnsE labwork computers, the last version of MBED-OS is installed in <code class="file docutils literal notranslate"><span class="pre">S:\mbed-os</span></code> and <code class="file docutils literal notranslate"><span class="pre">C:\mbed-os</span></code> .</p>
+</div>
+<p>Click <span class="menuselection">Add project</span>. Your first project is created.</p>
+<figure class="align-center">
+<img alt="../_images/keil_mbed_studio_first_project.png" src="../_images/keil_mbed_studio_first_project.png" />
+</figure>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Now it’s time to test your first application.</p>
+</section>
 </section>
 <section id="blinky-baremetal-example">
-<h2>Blinky Baremetal Example<a class="headerlink" href="#blinky-baremetal-example" title="Link to this heading"></a></h2>
+<span id="mbed-blinky"></span><h2>Blinky Baremetal Example<a class="headerlink" href="#blinky-baremetal-example" title="Link to this heading"></a></h2>
+</section>
+<section id="duplicate-a-project">
+<h2>Duplicate a project<a class="headerlink" href="#duplicate-a-project" title="Link to this heading"></a></h2>
 </section>
 <section id="pre-compiler-informations">
 <h2>Pre-compiler informations<a class="headerlink" href="#pre-compiler-informations" title="Link to this heading"></a></h2>

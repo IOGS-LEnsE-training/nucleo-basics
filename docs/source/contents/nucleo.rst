@@ -1,6 +1,12 @@
 Nucleo boards from STMicroelectronics
 #####################################
 
+.. figure:: ../_static/images/nucleo/nucleo_boards.png
+	:align: center
+	:width: 70%
+
+	Nucleo-G431KB (left) and Nucleo-L476RG (right) boards.
+
 .. toctree::
    :maxdepth: 1
 

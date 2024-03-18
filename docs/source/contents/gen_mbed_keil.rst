@@ -1,5 +1,9 @@
-MBED Compiler and Keil Studio IDE
-#################################
+MBED OS and Keil Studio IDE
+###########################
+
+.. figure:: ../_static/images/mbed-os_logo.png
+	:align: center
+	:scale: 50%
 
 Programming languages for microcontrollers 
 ******************************************
@@ -45,7 +49,11 @@ Mbed is an **open-source embedded operating system** designed by Arm®, a leadin
 
 It includes **Mbed OS**, a lightweight, **open-source operating system** specifically designed for microcontrollers. It abstracts away low-level hardware details and provides a consistent API for accessing peripherals.
 
-It also provides a comprehensive set of development tools, including a free Integrated Development Environment (IDE) called the **Mbed Studio**.
+.. figure:: ../_static/images/mbed-os_logo.png
+	:align: center
+	:scale: 20%
+
+It also provides a comprehensive set of development tools, including two free Integrated Development Environments (IDE) called **Mbed Studio** (from mbed.com) and **Keil Studio Cloud** (from arm.com).
 
 Mbed has a vibrant community of developers, contributors, and partners who contribute libraries, example codes, and resources to the ecosystem. This rich ecosystem makes it easier for developers to find support, collaborate, and leverage existing components for their projects. 
 

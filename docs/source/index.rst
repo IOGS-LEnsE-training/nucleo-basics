@@ -9,7 +9,12 @@ Nucleo boards - Basics
 .. caution::
    This application and its documentation website are still works in progress
 
-**Nucleo Basics** is a complete set of tutorials to learn the basics of **Nucleo board** programmation with the **MBED** free open source IoT operating system.
+**Nucleo Basics** is a complete set of tutorials to learn the basics of **Nucleo board** programmation with the **MBED** free open source IoT operating system, designed for ARM® core microcontrollers.
+
+.. figure:: _static/images/arm-mbed.jpg
+	:align: center
+	:scale: 50%
+
 
 The GitHub repository of this project : `Nucleo Basics <https://github.com/IOGS-LEnsE-training/nucleo-basics>`_
 

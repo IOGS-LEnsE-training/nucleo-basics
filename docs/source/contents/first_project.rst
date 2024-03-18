@@ -3,6 +3,12 @@ First project
 
 In this section, you will learn how to **create a new MBED-OS-based project**, using *Keil Studio Cloud* or *MBED Studio*, how to **compile and test your program** on a Nucleo board. See :ref:`Creation of a MBED project <mbed_project>`
 
+.. figure:: ../_static/images/keil/keil_main.png
+	:align: center
+	:width: 70%
+
+|
+
 We will discuss also with:
 
 * the **main structure** of an embedded program, written in  C++, including interrupt-driven and event-driven programming,

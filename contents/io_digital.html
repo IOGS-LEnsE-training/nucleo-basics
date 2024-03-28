@@ -58,7 +58,20 @@
 <p class="caption" role="heading"><span class="caption-text">Interactions</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="io.html"> Inputs and Outputs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">     Digital inputs and Output</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">     Digital inputs and Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#digital-signals">Digital signals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#binary-digits">Binary Digits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#digital-carrier-signals">Digital carrier signals</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#digital-ouputs">Digital Ouputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#declare-an-output">Declare an output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#update-an-output">Update an output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#digital-inputs">Digital Inputs</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="io_analog_in.html">     Analog inputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io_pwm_out.html">     PWM outputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="io_analog_out.html">     Analog outputs</a></li>
@@ -104,6 +117,47 @@
              
   <section id="digital-inputs-and-outputs">
 <h1>Digital inputs and outputs<a class="headerlink" href="#digital-inputs-and-outputs" title="Link to this heading"></a></h1>
+<section id="digital-signals">
+<h2>Digital signals<a class="headerlink" href="#digital-signals" title="Link to this heading"></a></h2>
+<section id="binary-digits">
+<h3>Binary Digits<a class="headerlink" href="#binary-digits" title="Link to this heading"></a></h3>
+<p>A <strong>digital signal</strong> is a type of signal that represents data as <strong>discrete values</strong>, using <strong>binary digits</strong> (<em>bits</em>).</p>
+<p>In digital signals, the information is encoded as a sequence of binary numbers, where <strong>each bit</strong> can have one of <strong>two possible states</strong>: ‘0’ or ‘1’.</p>
+<p>Digital signals are the <strong>primitive signals</strong> of microcontrollers. All the internal data transit as ‘0’ or ‘1’ between the different main organs: memories, processing units…</p>
+</section>
+<section id="digital-carrier-signals">
+<h3>Digital carrier signals<a class="headerlink" href="#digital-carrier-signals" title="Link to this heading"></a></h3>
+<p>In digital systems, bits are typically carried using <strong>electronic signals</strong>. These signals can be represented by different physical phenomena such as <strong>voltage levels</strong> in electrical circuits, <strong>light pulses</strong> in optical fibers, or magnetic polarities in magnetic storage devices.</p>
+<p>In STM32 microcontrollers on Nucleo boards, two different voltage levels are used:</p>
+<ul class="simple">
+<li><p>0V for logical ‘0’</p></li>
+<li><p>3.3V for logical ‘1’</p></li>
+</ul>
+</section>
+</section>
+<section id="digital-ouputs">
+<h2>Digital Ouputs<a class="headerlink" href="#digital-ouputs" title="Link to this heading"></a></h2>
+<p>Digital outputs are often used in microcontroller-based systems for <strong>interfacing with the external world</strong>.</p>
+<p>They are commonly used in electronic systems <strong>to control devices</strong> such as motors, lights, or relays, where the output state determines whether the device is on or off, open or closed, etc.</p>
+<section id="declare-an-output">
+<h3>Declare an output<a class="headerlink" href="#declare-an-output" title="Link to this heading"></a></h3>
+<p>Digital ouput are described by the <code class="xref py py-class docutils literal notranslate"><span class="pre">DigitalOut</span></code> class from the <em>mbed.h</em> library.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">DigitalOut</span><span class="w"> </span><span class="nf">var_name</span><span class="p">(</span><span class="n">PIN_NAME</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>As a bridge with the external world, this instruction required a valid <em>PIN_NAME</em>.</p>
+</section>
+<section id="update-an-output">
+<h3>Update an output<a class="headerlink" href="#update-an-output" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="digital-inputs">
+<h2>Digital Inputs<a class="headerlink" href="#digital-inputs" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Voltage between 0 and 3.3V !</p>
+</div>
+</section>
 </section>
 
 

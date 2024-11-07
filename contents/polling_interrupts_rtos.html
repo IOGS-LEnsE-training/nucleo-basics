@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -6,22 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Polling vs Interrupts vs real-time OS &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
       <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
       <link rel="stylesheet" type="text/css" href="https://iogs-lense.github.io/lense.tech/assets/css/fontawesome/css/all.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2709fde1"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -126,7 +124,8 @@
 <li><p><strong>Output</strong>: After processing the input data, the program <strong>produces output</strong>, which can be displayed to the user, saved to a file, or sent to other systems.</p></li>
 </ol>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/gen_main_structure.png"><img alt="../_images/gen_main_structure.png" src="../_images/gen_main_structure.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_main_structure.png"><img alt="../_images/gen_main_structure.png" src="../_images/gen_main_structure.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">Generic block diagram of a computer program.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
@@ -149,7 +148,8 @@
 </ol>
 <p>The main structure of an embedded program revolves around initializing hardware, implementing the main functionality in a <strong>continuous loop</strong>, handling interrupts and events, but also interacting with hardware peripherals, managing power consumption, ensuring reliability, and communicating with external devices or systems.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/gen_microcont_prog_struct.png"><img alt="../_images/gen_microcont_prog_struct.png" src="../_images/gen_microcont_prog_struct.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_microcont_prog_struct.png"><img alt="../_images/gen_microcont_prog_struct.png" src="../_images/gen_microcont_prog_struct.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Generic block diagram of an embedded program.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
@@ -183,7 +183,8 @@
 <h4>Operating principle<a class="headerlink" href="#operating-principle" title="Link to this heading"></a></h4>
 <p>The use of an <strong>infinite loop</strong> is common because embedded systems often need to <strong>continuously perform tasks</strong>, such as reading sensor data, processing inputs, and updating outputs. Placing these tasks within a loop allows the program to execute them repeatedly, ensuring that the system remains operational.</p>
 <figure class="align-center" id="id3">
-<span id="fig-gen-polling"></span><a class="reference internal image-reference" href="../_images/gen_polling.png"><img alt="../_images/gen_polling.png" src="../_images/gen_polling.png" style="width: 100%;" /></a>
+<span id="fig-gen-polling"></span><a class="reference internal image-reference" href="../_images/gen_polling.png"><img alt="../_images/gen_polling.png" src="../_images/gen_polling.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">Continuous polling principle. Inputs are called <span class="math notranslate nohighlight">\(E_x\)</span>, outputs <span class="math notranslate nohighlight">\(S_x\)</span>. Processes to run are called <span class="math notranslate nohighlight">\(C_x\)</span>. All the inputs are read at each iteration of the loop, the execution of processes depends on decisions made regarding the inputs, and outputs are updated.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
@@ -202,7 +203,8 @@
 <h3>Interrupt Service Routines<a class="headerlink" href="#interrupt-service-routines" title="Link to this heading"></a></h3>
 <p>To mitigate the limitations of the polling method, alternative approaches such as <strong>interrupt-driven</strong> programming, event-driven programming, or using dedicated <strong>hardware peripherals with interrupt capabilities</strong> may be more suitable, especially in systems with strict real-time requirements or resource-constrained environments. These approaches minimize CPU overhead, improve responsiveness, and enhance overall system efficiency compared to continuous polling.</p>
 <figure class="align-center" id="id4">
-<span id="fig-gen-isr"></span><a class="reference internal image-reference" href="../_images/gen_isr.png"><img alt="../_images/gen_isr.png" src="../_images/gen_isr.png" style="width: 100%;" /></a>
+<span id="fig-gen-isr"></span><a class="reference internal image-reference" href="../_images/gen_isr.png"><img alt="../_images/gen_isr.png" src="../_images/gen_isr.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">Interrupt-driven programming principle. Inputs are called <span class="math notranslate nohighlight">\(E_x\)</span>, outputs <span class="math notranslate nohighlight">\(S_x\)</span>. Processes to run are called <span class="math notranslate nohighlight">\(C_x\)</span>. Specific processes are executed only when an event occurs.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>

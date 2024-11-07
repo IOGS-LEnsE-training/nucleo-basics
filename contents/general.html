@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -6,22 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Embedded systems &mdash; Nucleo Basics 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-training.css?v=6d89b175" />
       <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
       <link rel="stylesheet" type="text/css" href="https://iogs-lense.github.io/lense.tech/assets/css/fontawesome/css/all.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2709fde1"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -124,7 +122,8 @@
 <h2>What is an embedded system ?<a class="headerlink" href="#what-is-an-embedded-system" title="Link to this heading"></a></h2>
 <p>An <strong>embedded system</strong> is a combination of <strong>hardware and software</strong> designed for a specific function within a larger system. It typically includes one or more microcontrollers or microprocessors, along with other components like sensors, actuators, and communication interfaces.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/gen_emb_sys_structure.png"><img alt="../_images/gen_emb_sys_structure.png" src="../_images/gen_emb_sys_structure.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_emb_sys_structure.png"><img alt="../_images/gen_emb_sys_structure.png" src="../_images/gen_emb_sys_structure.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Structure of an embedded system.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
@@ -143,7 +142,8 @@
 </ul>
 <p>These examples highlight the diverse range of applications where embedded systems play a crucial role in providing functionality, <strong>control</strong>, and <strong>automation</strong>.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/gen_emb_sys_robot_example.png"><img alt="../_images/gen_emb_sys_robot_example.png" src="../_images/gen_emb_sys_robot_example.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_emb_sys_robot_example.png"><img alt="../_images/gen_emb_sys_robot_example.png" src="../_images/gen_emb_sys_robot_example.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">An holonomic robot. Students project from LEnsE.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
@@ -167,14 +167,16 @@
 <h3>What is a microprocessor ?<a class="headerlink" href="#what-is-a-microprocessor" title="Link to this heading"></a></h3>
 <p>A microprocessor is a central processing unit (CPU) contained on a single integrated circuit. It serves as the brain of a computer or embedded system, handling instructions and processing data according to the program instructions stored in memory.</p>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/gen_microproc_structure.png"><img alt="../_images/gen_microproc_structure.png" src="../_images/gen_microproc_structure.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_microproc_structure.png"><img alt="../_images/gen_microproc_structure.png" src="../_images/gen_microproc_structure.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Generic block diagram of a microprocessor system.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Microprocessors typically include arithmetic logic units (ALUs), control units, registers, and various other components necessary for executing instructions and managing data. They are widely used in personal computers, servers, smartphones, embedded systems, and other electronic devices.</p>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../_images/gen_microproc_cpu.png"><img alt="../_images/gen_microproc_cpu.png" src="../_images/gen_microproc_cpu.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_microproc_cpu.png"><img alt="../_images/gen_microproc_cpu.png" src="../_images/gen_microproc_cpu.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Generic block diagram of a Central Process Unit (CPU).</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
@@ -209,7 +211,8 @@
 <h3>What is a microcontroller ?<a class="headerlink" href="#what-is-a-microcontroller" title="Link to this heading"></a></h3>
 <p>Microcontrollers are <strong>compact integrated circuits</strong> that serve as the brains of various electronic devices, controlling their operation by executing pre-programmed instructions. They handle tasks such as monitoring inputs, processing data, and controlling outputs, making them essential for automation, sensing, and control in devices like smartphones, appliances, and automotive systems.</p>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../_images/gen_microcont_structure.png"><img alt="../_images/gen_microcont_structure.png" src="../_images/gen_microcont_structure.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/gen_microcont_structure.png"><img alt="../_images/gen_microcont_structure.png" src="../_images/gen_microcont_structure.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Generic block diagram of a microcontroller.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
